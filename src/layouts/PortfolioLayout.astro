@@ -1,13 +1,17 @@
 ---
 import PortfolioSidebar from '../components/PortfolioSidebar.astro';
 import '../styles/custom.css';
+import { getLangFromUrl } from '../lib/i18n';
+
+const currentLang = getLangFromUrl(Astro.url.pathname);
 
 const {
   title = 'Guilherme Rodrigues | Portfolio',
   description = 'Portfolio de Guilherme Rodrigues: Engenharia de Computação, sistemas embarcados, IoT, IA aplicada, automação e Segurança da Informação.',
-  lang = 'pt-BR',
+  lang = currentLang === 'pt' ? 'pt-BR' : 'en',
 } = Astro.props;
 ---
+
 <html lang={lang}>
   <head>
     <meta charset="utf-8" />
@@ -18,16 +22,50 @@ const {
     <meta name="theme-color" content="#040b14" />
     <title>{title}</title>
   </head>
+
   <body class="portfolio-home">
     <PortfolioSidebar />
+
     <main class="home-main">
       <slot />
     </main>
 
+    <script define:vars={{ currentLang }}>
+      (() => {
+        const root = document.documentElement;
+        const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+
+        function setTheme(theme) {
+          root.dataset.theme = theme;
+          localStorage.setItem('portfolio-theme', theme);
+
+          const icon = document.querySelector('[data-theme-icon]');
+          const label = document.querySelector('[data-theme-label]');
+
+          if (!icon || !label) return;
+
+          if (theme === 'dark') {
+            icon.textContent = '☀';
+            label.textContent = currentLang === 'pt' ? 'Modo claro' : 'Light mode';
+          } else {
+            icon.textContent = '☾';
+            label.textContent = currentLang === 'pt' ? 'Modo escuro' : 'Dark mode';
+          }
+        }
+
+        document.querySelector('[data-theme-toggle]')?.addEventListener('click', () => {
+          const current = root.dataset.theme || 'dark';
+          setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        setTheme(savedTheme);
+      })();
+    </script>
+
     <script>
       const body = document.body;
       const toggle = document.querySelector('.mobile-nav-toggle');
-      const closeTargets = document.querySelectorAll('[data-close-menu], .profile-link');
+      const closeTargets = document.querySelectorAll('[data-close-menu], .profile-link, .nav-link');
 
       function setMenu(open) {
         body.classList.toggle('sidebar-open', open);
