@@ -1623,3 +1623,16 @@ html[data-theme='light'] .info-list div {
 html[data-theme='light'] .info-list strong {
   color: #0f3a68 !important;
 }
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  align-items: center;
+  padding: 6rem clamp(2rem, 8vw, 8rem);
+  color: #fff;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(2, 6, 23, 0.88), rgba(2, 6, 23, 0.54), rgba(2, 6, 23, 0.18)),
+    url('/images/hero-tech-bg.jpg') center / cover no-repeat;
+}
