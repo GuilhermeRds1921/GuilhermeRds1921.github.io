@@ -1583,3 +1583,43 @@ a {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
+
+/* ================================
+   ABOUT INFO LIST CONTRAST
+================================ */
+
+.info-list {
+  color: var(--text-main) !important;
+}
+
+.info-list div {
+  color: var(--text-main) !important;
+  opacity: 0.95;
+}
+
+.info-list strong {
+  color: var(--title-color) !important;
+  font-weight: 850;
+}
+
+.info-list div::before {
+  color: var(--accent) !important;
+  opacity: 1;
+  text-shadow: 0 0 12px rgba(14, 165, 233, 0.35);
+}
+
+html[data-theme='dark'] .info-list div {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme='dark'] .info-list strong {
+  color: #eaf2ff !important;
+}
+
+html[data-theme='light'] .info-list div {
+  color: #334155 !important;
+}
+
+html[data-theme='light'] .info-list strong {
+  color: #0f3a68 !important;
+}
