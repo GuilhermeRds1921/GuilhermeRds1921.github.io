@@ -1,0 +1,51 @@
+---
+import PortfolioLayout from '../../../layouts/PortfolioLayout.astro';
+import VideoEmbed from '../../../components/VideoEmbed.astro';
+---
+<PortfolioLayout title="Pato a Jato | Guilherme Rodrigues">
+  <section class="project-detail-hero project-hero-car">
+    <div>
+      <p class="eyebrow">Competition · Telemetry · PCB</p>
+      <h1>Pato a Jato</h1>
+      <p>
+        Participação em equipe de competição de eficiência energética, atuando com telemetria, ESP32 e desenvolvimento/validação de placas de circuito impresso.
+      </p>
+      <div class="tag-row"><span>Telemetry</span><span>ESP32</span><span>PCB</span><span>Competition</span></div>
+    </div>
+  </section>
+
+  <article class="content-section project-layout-grid">
+    <aside class="project-aside">
+      <strong>Team</strong><span>Pato a Jato</span>
+      <strong>Period</strong><span>2022–2023</span>
+      <strong>Result</strong><span>2º lugar · categoria combustão</span>
+      <strong>Focus</strong><span>Telemetry and electronics</span>
+    </aside>
+
+    <div class="project-body longform">
+      <h2>Story</h2>
+      <p>
+        O Pato a Jato foi uma das experiências mais marcantes da minha graduação. Participei da telemetria do protótipo a combustão e do desenvolvimento,
+        fabricação e validação das placas de circuito impresso do primeiro protótipo elétrico da equipe.
+      </p>
+      <p>
+        Esta página foi pensada para receber fotos da oficina, das placas, da CNC, dos protótipos, da viagem e da competição no Rio de Janeiro.
+      </p>
+
+      <h2>Media</h2>
+      <VideoEmbed title="Demonstração ou relato da competição" caption="Área para colocar vídeo do protótipo, apresentação ou bastidores." />
+
+      <h2>Gallery</h2>
+      <div class="gallery-grid compact-gallery">
+        <figure><img src="/images/projects/placeholder.svg" alt="Placeholder" /><figcaption>Protótipo</figcaption></figure>
+        <figure><img src="/images/projects/placeholder.svg" alt="Placeholder" /><figcaption>PCB usinada</figcaption></figure>
+        <figure><img src="/images/projects/placeholder.svg" alt="Placeholder" /><figcaption>Competição</figcaption></figure>
+      </div>
+
+      <h2>What I learned</h2>
+      <p>
+        A experiência envolveu trabalho em equipe, validação prática, eletrônica aplicada, prototipagem, documentação e a pressão real de uma competição.
+      </p>
+    </div>
+  </article>
+</PortfolioLayout>

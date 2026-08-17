@@ -1,0 +1,17 @@
+---
+import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import VideoEmbed from '../../components/VideoEmbed.astro';
+---
+<PortfolioLayout title="Videos | Guilherme Rodrigues">
+  <PageHeader eyebrow="Demonstrations" title="Videos" description="A central place for explanatory videos, project demonstrations, presentation recordings and technical walkthroughs." />
+
+  <section class="content-section">
+    <div class="video-grid">
+      <VideoEmbed title="Biometria Neonatal / TCC" caption="Vídeo explicando o problema, pipeline e testes em embarcados." />
+      <VideoEmbed title="Ball Balancing Robot" caption="Demonstração da mesa equilibrando a bola e interface web." />
+      <VideoEmbed title="Pato a Jato" caption="Bastidores, telemetria e competição." />
+      <VideoEmbed title="Robotnik" caption="Robôs, demonstrações e divulgação científica." />
+    </div>
+  </section>
+</PortfolioLayout>

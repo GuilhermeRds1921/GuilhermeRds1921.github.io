@@ -1,0 +1,7 @@
+---
+const { items = [] } = Astro.props as { items: string[] };
+---
+
+<div class="badge-row">
+  {items.map((item) => <span class="badge">{item}</span>)}
+</div>

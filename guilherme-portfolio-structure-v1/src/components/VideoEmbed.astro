@@ -1,0 +1,14 @@
+---
+const { title = 'Vídeo', src = '', caption = '' } = Astro.props;
+---
+<figure class="video-embed">
+  {src ? (
+    <iframe src={src} title={title} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  ) : (
+    <div class="video-placeholder">▶</div>
+  )}
+  <figcaption>
+    <strong>{title}</strong>
+    {caption && <span>{caption}</span>}
+  </figcaption>
+</figure>
