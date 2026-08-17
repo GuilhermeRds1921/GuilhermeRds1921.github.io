@@ -6,10 +6,18 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Guilherme Rodrigues',
-      social: {
-        github: 'https://github.com/GuilhermeRds1921',
-        linkedin: 'https://www.linkedin.com/in/guilherme-rodrigues-b39a751a7/',
-      },
+      social: [
+        {
+          icon: 'github',
+          label: 'GitHub',
+          href: 'https://github.com/GuilhermeRds1921',
+        },
+        {
+          icon: 'linkedin',
+          label: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/guilherme-rodrigues-b39a751a7/',
+        },
+      ],
       sidebar: [
         {
           label: 'Biblioteca',
