@@ -3,10 +3,26 @@ import PortfolioLayout from '../layouts/PortfolioLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 
 const facts = [
-  { value: '4+', label: 'frentes principais', detail: 'Embarcados, IoT, IA aplicada e Cybersecurity' },
-  { value: '7+', label: 'anos na UTFPR-PB', detail: 'com pandemia no meio e retomada forte em projetos' },
-  { value: '2º', label: 'lugar em competição', detail: 'Pato a Jato · categoria combustão' },
-  { value: '1', label: 'TCC em IA embarcada', detail: 'Machine learning em Raspberry Pi e ARM Linux' },
+  {
+    value: '4+',
+    label: 'frentes principais',
+    detail: 'Sistemas embarcados, IoT, IA aplicada e Cybersecurity',
+  },
+  {
+    value: '7+',
+    label: 'anos na UTFPR-PB',
+    detail: 'Trajetória com pandemia no meio e retomada forte em projetos',
+  },
+  {
+    value: '2º',
+    label: 'lugar em competição',
+    detail: 'Pato a Jato · categoria combustão',
+  },
+  {
+    value: '1',
+    label: 'TCC em IA embarcada',
+    detail: 'Machine learning em Raspberry Pi e plataformas ARM Linux',
+  },
 ];
 
 const projects = [
@@ -34,78 +50,112 @@ const projects = [
   {
     title: 'Ball Balancing Robot',
     href: '/projects/ball-balancing-robot/',
-    text: 'Mesa robótica com Raspberry Pi, câmera, servos, controle PD, FastAPI, React e telemetria em tempo real.',
+    text: 'Mesa robótica com Raspberry Pi, câmera, servomotores, controle PD, FastAPI, React e telemetria em tempo real.',
     tags: ['Controle', 'Raspberry Pi', 'Visão Computacional'],
     media: 'control',
   },
 ];
 
 const skills = [
-  'C', 'C++', 'Python', 'Linux', 'Git/GitHub', 'Raspberry Pi', 'ESP32', 'IoT', 'Telemetria',
-  'Sistemas Embarcados', 'Eletrônica Aplicada', 'Sensores', 'Dashboards', 'OpenCV', 'Machine Learning',
-  'Cybersecurity', 'React', 'Tailwind', 'FastAPI', 'SQL', 'Fusion 360', 'PCB', 'Modelagem 3D'
+  'C',
+  'C++',
+  'Python',
+  'Linux',
+  'Git/GitHub',
+  'Raspberry Pi',
+  'ESP32',
+  'IoT',
+  'Telemetria',
+  'Sistemas Embarcados',
+  'Eletrônica Aplicada',
+  'Sensores',
+  'Dashboards',
+  'OpenCV',
+  'Machine Learning',
+  'Cybersecurity',
+  'React',
+  'Tailwind',
+  'FastAPI',
+  'SQL',
+  'Fusion 360',
+  'PCB',
+  'Modelagem 3D',
 ];
 ---
-<PortfolioLayout title="Guilherme Rodrigues | Portfolio">
+
+<PortfolioLayout
+  title="Guilherme Rodrigues | Portfólio"
+  description="Portfólio de Guilherme Rodrigues: Engenharia de Computação, sistemas embarcados, IoT, IA aplicada, automação, projetos e Segurança da Informação."
+>
   <section id="home" class="hero-section">
     <div class="hero-content">
       <h1>Guilherme Rodrigues</h1>
-      <p class="hero-role">I'm a <span>Computer Engineering student</span></p>
-      <p class="hero-summary">
-        Portfolio, project archive and technical library. A place to organize prototypes, stories, videos, photos,
-        research notes and everything I have been building with software, hardware, IoT, AI and Cybersecurity.
+
+      <p class="hero-role">
+        Estudante de <span>Engenharia de Computação</span>
       </p>
+
+      <p class="hero-summary">
+        Portfólio, arquivo de projetos e biblioteca técnica. Um espaço para organizar protótipos,
+        histórias, vídeos, fotos, anotações de pesquisa e tudo que venho construindo com software,
+        hardware, IoT, inteligência artificial e Segurança da Informação.
+      </p>
+
       <div class="hero-actions">
-        <a class="btn btn-primary" href="/projects/">View projects</a>
-        <a class="btn btn-glass" href="/biblioteca/">Open library</a>
+        <a class="btn btn-primary" href="/projects/">Ver projetos</a>
+        <a class="btn btn-glass" href="/biblioteca/">Abrir biblioteca</a>
       </div>
     </div>
   </section>
 
   <section id="about" class="content-section">
     <div class="section-heading">
-      <h2>About</h2>
+      <h2>Sobre</h2>
     </div>
 
     <div class="about-grid">
       <div class="profile-card">
-       <img src="/images/profile.jpg" alt="Foto de Guilherme Rodrigues" />
+        <img src="/images/profile.jpg" alt="Foto de Guilherme Rodrigues" />
       </div>
 
       <div class="about-copy">
-        <h3>Computer Engineering student focused on applied technology.</h3>
+        <h3>Estudante de Engenharia de Computação com foco em tecnologia aplicada.</h3>
+
         <p>
-          Sou estudante de Engenharia de Computação na UTFPR-PB. Minha trajetória foi construída principalmente na prática,
-          participando de projetos de robótica, extensão, competição, pesquisa e desenvolvimento de protótipos.
+          Sou estudante de Engenharia de Computação na UTFPR – Campus Pato Branco. Minha trajetória foi construída
+          principalmente na prática, participando de projetos de robótica, extensão, competição, pesquisa e
+          desenvolvimento de protótipos.
         </p>
+
         <p>
           Tenho bastante interesse pela área onde software e hardware se encontram: sistemas embarcados, sensores,
-          telemetria, IoT, dashboards, Linux, C/C++, Python, IA aplicada e Segurança da Informação.
+          telemetria, IoT, dashboards, Linux, C/C++, Python, inteligência artificial aplicada e Segurança da Informação.
         </p>
+
         <p>
-          Atualmente participo do Grupo de Biometria Neonatal e desenvolvo meu TCC sobre integração de machine learning em
-          plataformas embarcadas, avaliando inferência de modelos em dispositivos como Raspberry Pi.
+          Atualmente participo do Grupo de Biometria Neonatal e desenvolvo meu TCC sobre integração de machine learning
+          em plataformas embarcadas, avaliando inferência de modelos em dispositivos como Raspberry Pi.
         </p>
+
         <div class="info-list">
-          <div><strong>City:</strong> Pato Branco, Paraná, Brazil</div>
-          <div><strong>Education:</strong> Computer Engineering · UTFPR-PB</div>
-          <div><strong>Focus:</strong> Embedded Systems, IoT, AI, Automation and Cybersecurity</div>
-          <div><strong>Looking for:</strong> Internship opportunities in technology</div>
+          <div><strong>Cidade:</strong> Pato Branco, Paraná, Brasil</div>
+          <div><strong>Formação:</strong> Engenharia de Computação · UTFPR-PB</div>
+          <div><strong>Foco:</strong> Sistemas embarcados, IoT, IA, automação e Cybersecurity</div>
+          <div><strong>Buscando:</strong> oportunidades de estágio em tecnologia</div>
         </div>
       </div>
     </div>
   </section>
 
- 
-
   <section id="projects" class="content-section">
     <div class="section-heading">
-      <h2>Featured projects</h2>
+      <h2>Projetos em destaque</h2>
       <p>
-        Each project page is built to support long-form stories, technical explanations, image galleries,
-        videos, diagrams, source links and lessons learned.
+        Cada página de projeto foi pensada para reunir histórias mais completas, explicações técnicas, galerias de
+        imagens, vídeos, diagramas, links de código e aprendizados.
       </p>
     </div>
+
     <div class="project-grid project-grid-2x">
       {projects.map((project) => <ProjectCard {...project} />)}
     </div>
@@ -113,24 +163,53 @@ const skills = [
 
   <section id="content-map" class="content-section alt-section">
     <div class="section-heading">
-      <h2>Portfolio structure</h2>
-      <p>This site is organized as a large archive, not only a resume.</p>
+      <h2>Estrutura do portfólio</h2>
+      <p>
+        Este site foi pensado como um grande arquivo pessoal e técnico, não apenas como um currículo online.
+      </p>
     </div>
+
     <div class="structure-grid">
-      <a href="/projects/" class="structure-card"><strong>Projects</strong><span>Technical pages with goals, architecture, media and results.</span></a>
-      <a href="/stories/" class="structure-card"><strong>Stories</strong><span>Long texts about my path, competitions, groups and lessons learned.</span></a>
-      <a href="/gallery/" class="structure-card"><strong>Gallery</strong><span>Photo collections from prototypes, events, labs and experiments.</span></a>
-      <a href="/videos/" class="structure-card"><strong>Videos</strong><span>Demonstrations, presentations and explanatory recordings.</span></a>
-      <a href="/biblioteca/" class="structure-card"><strong>Library</strong><span>Searchable technical notes, studies, templates and documentation.</span></a>
-      <a href="/certifications/" class="structure-card"><strong>Certifications</strong><span>Courses, Cisco materials, certificates and learning history.</span></a>
+      <a href="/projects/" class="structure-card">
+        <strong>Projetos</strong>
+        <span>Páginas técnicas com objetivos, arquitetura, mídias, resultados e aprendizados.</span>
+      </a>
+
+      <a href="/stories/" class="structure-card">
+        <strong>Histórias</strong>
+        <span>Textos longos sobre minha trajetória, competições, grupos acadêmicos e aprendizados.</span>
+      </a>
+
+      <a href="/gallery/" class="structure-card">
+        <strong>Galeria</strong>
+        <span>Coleções de fotos de protótipos, eventos, laboratórios, oficinas e experimentos.</span>
+      </a>
+
+      <a href="/videos/" class="structure-card">
+        <strong>Vídeos</strong>
+        <span>Demonstrações, apresentações, registros de projetos e explicações técnicas.</span>
+      </a>
+
+      <a href="/biblioteca/" class="structure-card">
+        <strong>Biblioteca</strong>
+        <span>Anotações técnicas, estudos, modelos, documentação e materiais de referência.</span>
+      </a>
+
+      <a href="/certifications/" class="structure-card">
+        <strong>Certificações</strong>
+        <span>Cursos, certificados, materiais da Cisco e formações complementares.</span>
+      </a>
     </div>
   </section>
 
   <section id="skills" class="content-section">
     <div class="section-heading">
-      <h2>Skills</h2>
-      <p>Tools and areas that appear across my projects and studies.</p>
+      <h2>Habilidades</h2>
+      <p>
+        Ferramentas, tecnologias e áreas que aparecem nos meus projetos, estudos e experiências.
+      </p>
     </div>
+
     <div class="skills-cloud">
       {skills.map((skill) => <span>{skill}</span>)}
     </div>
@@ -138,9 +217,13 @@ const skills = [
 
   <section id="contact" class="content-section contact-section alt-section">
     <div class="section-heading">
-      <h2>Contact</h2>
-      <p>Open to internship opportunities in technology, embedded systems, automation, AI and Cybersecurity.</p>
+      <h2>Contato</h2>
+      <p>
+        Aberto a oportunidades de estágio em tecnologia, sistemas embarcados, automação, IA aplicada, IoT e
+        Segurança da Informação.
+      </p>
     </div>
+
     <div class="contact-card">
       <a class="btn btn-primary" href="mailto:guilhermerodrigues1921@gmail.com">Email</a>
       <a class="btn" href="https://github.com/GuilhermeRds1921" target="_blank" rel="noreferrer">GitHub</a>

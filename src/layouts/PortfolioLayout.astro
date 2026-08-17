@@ -33,6 +33,11 @@ const {
     <script define:vars={{ currentLang }}>
       (() => {
         const root = document.documentElement;
+        const body = document.body;
+
+        /*
+          TEMA CLARO / ESCURO
+        */
         const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
 
         function setTheme(theme) {
@@ -59,26 +64,129 @@ const {
         });
 
         setTheme(savedTheme);
-      })();
-    </script>
 
-    <script>
-      const body = document.body;
-      const toggle = document.querySelector('.mobile-nav-toggle');
-      const closeTargets = document.querySelectorAll('[data-close-menu], .profile-link, .nav-link');
+        /*
+          MENU MOBILE
+        */
+        const toggle = document.querySelector('.mobile-nav-toggle');
+        const closeTargets = document.querySelectorAll('[data-close-menu], .profile-link, .nav-link');
 
-      function setMenu(open) {
-        body.classList.toggle('sidebar-open', open);
-        toggle?.setAttribute('aria-expanded', String(open));
+        function setMenu(open) {
+          body.classList.toggle('sidebar-open', open);
+          toggle?.setAttribute('aria-expanded', String(open));
+        }
+
+        toggle?.addEventListener('click', () => {
+          setMenu(!body.classList.contains('sidebar-open'));
+        });
+
+        closeTargets.forEach((target) => {
+          target.addEventListener('click', () => setMenu(false));
+        });
+
+        /*
+          TOAST
+        */
+        let toast = document.querySelector('[data-toast]');
+        let toastTimer;
+
+        function ensureToast() {
+          if (toast) return toast;
+
+          toast = document.createElement('div');
+          toast.className = 'site-toast';
+          toast.setAttribute('data-toast', '');
+          toast.setAttribute('role', 'status');
+          toast.setAttribute('aria-live', 'polite');
+
+          document.body.appendChild(toast);
+
+          return toast;
+        }
+
+        function showToast(message) {
+          const toastElement = ensureToast();
+
+          toastElement.textContent =
+            message ||
+            (currentLang === 'pt'
+              ? 'Esta versão ainda não está disponível.'
+              : 'This version is not available yet.');
+
+          toastElement.classList.add('show');
+
+          window.clearTimeout(toastTimer);
+          toastTimer = window.setTimeout(() => {
+            toastElement.classList.remove('show');
+          }, 3000);
+        }
+
+        async function pageExists(url) {
+        const pathsToTry = [
+          url.pathname,
+          url.pathname.endsWith('/') ? url.pathname.slice(0, -1) : `${url.pathname}/`,
+          `${url.pathname.replace(/\/$/, '')}/index.html`,
+        ];
+
+        for (const path of [...new Set(pathsToTry)]) {
+          try {
+            const response = await fetch(path + url.search, {
+              method: 'GET',
+              cache: 'no-store',
+            });
+
+            if (response.ok) {
+              return path;
+            }
+          } catch {
+            // tenta o próximo formato
+          }
+        }
+
+        return null;
       }
 
-      toggle?.addEventListener('click', () => {
-        setMenu(!body.classList.contains('sidebar-open'));
-      });
+        /*
+          TROCA DE IDIOMA COM VERIFICAÇÃO DE PÁGINA
+        */
+        document.querySelectorAll('[data-lang-link]').forEach((link) => {
+          link.addEventListener('click', async (event) => {
+            const href = link.getAttribute('href');
+            if (!href) return;
 
-      closeTargets.forEach((target) => {
-        target.addEventListener('click', () => setMenu(false));
-      });
+            const targetUrl = new URL(href, window.location.origin);
+
+            const currentPath = window.location.pathname.replace(/\/$/, '');
+            const targetPath = targetUrl.pathname.replace(/\/$/, '');
+
+            event.preventDefault();
+
+            if (currentPath === targetPath) {
+              showToast(
+                currentLang === 'pt'
+                  ? 'Você já está na versão em português.'
+                  : 'You are already on the English version.'
+              );
+              return;
+            }
+
+           const existingPath = await pageExists(targetUrl);
+
+            if (existingPath) {
+              window.location.href = existingPath;
+              return;
+            }     
+
+            const isTryingEnglish = targetUrl.pathname.startsWith('/en');
+
+            showToast(
+              isTryingEnglish
+                ? 'Ainda não existe uma versão em inglês desta página.'
+                : 'Ainda não existe uma versão em português desta página.'
+            );
+          });
+        });
+      })();
     </script>
   </body>
 </html>

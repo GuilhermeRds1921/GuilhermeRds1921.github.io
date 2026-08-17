@@ -1546,3 +1546,40 @@ a {
 .nav-link:hover .nav-icon {
   color: var(--accent) !important;
 }
+
+/* ================================
+   TOAST
+================================ */
+
+.site-toast {
+  position: fixed !important;
+  left: 50% !important;
+  bottom: 1.5rem !important;
+  z-index: 99999 !important;
+
+  max-width: min(460px, calc(100vw - 2rem));
+  padding: 0.9rem 1.15rem;
+  border-radius: 999px;
+
+  background: var(--card-bg, #111827);
+  color: var(--text-main, #f8fafc);
+  border: 1px solid var(--card-border, rgba(148, 163, 184, 0.22));
+  box-shadow: 0 18px 45px rgba(2, 6, 23, 0.38);
+
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-align: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(18px);
+
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+.site-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
