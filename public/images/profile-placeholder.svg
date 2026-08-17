@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 720" role="img" aria-labelledby="title desc">
+  <title id="title">Profile placeholder</title>
+  <desc id="desc">Technical profile illustration with circuit lines and code elements.</desc>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#173b6c"/>
+      <stop offset="1" stop-color="#149ddd"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="720" fill="#eef6ff"/>
+  <circle cx="360" cy="270" r="116" fill="url(#g)" opacity=".92"/>
+  <path d="M175 615c20-117 96-181 185-181s165 64 185 181" fill="url(#g)" opacity=".92"/>
+  <g fill="none" stroke="#0563bb" stroke-width="10" stroke-linecap="round" opacity=".22">
+    <path d="M91 108h148m-68 0v96h89"/>
+    <path d="M629 124H498v118h-83"/>
+    <path d="M102 530h109v-93h68"/>
+    <path d="M616 535H492v-81h-59"/>
+  </g>
+  <g fill="#149ddd" opacity=".5">
+    <circle cx="91" cy="108" r="14"/><circle cx="260" cy="204" r="14"/><circle cx="498" cy="242" r="14"/><circle cx="629" cy="124" r="14"/>
+    <circle cx="102" cy="530" r="14"/><circle cx="279" cy="437" r="14"/><circle cx="433" cy="454" r="14"/><circle cx="616" cy="535" r="14"/>
+  </g>
+</svg>

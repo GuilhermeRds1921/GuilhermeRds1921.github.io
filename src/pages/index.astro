@@ -1,0 +1,233 @@
+---
+import '../styles/custom.css';
+
+const facts = [
+  { value: '7+', label: 'anos de trajetória acadêmica', detail: 'UTFPR-PB, projetos e laboratórios' },
+  { value: '4', label: 'grupos e projetos principais', detail: 'Robotnik, GeAstro, Pato a Jato e Biometria' },
+  { value: '2º', label: 'lugar em competição', detail: 'Pato a Jato · categoria combustão' },
+  { value: '1', label: 'TCC em IA embarcada', detail: 'machine learning em Raspberry Pi' },
+];
+
+const resumeItems = [
+  {
+    period: '2025 — atual',
+    title: 'Biometria Neonatal UTFPR',
+    subtitle: 'Iniciação científica · Machine Learning · Visão Computacional',
+    text: 'Pesquisa envolvendo modelos de redes neurais, processamento de imagens e avaliação de inferência em plataformas embarcadas.',
+  },
+  {
+    period: '2023 — 2024',
+    title: 'Estágio em Desenvolvimento',
+    subtitle: 'Secretaria Municipal de Ciência, Tecnologia e Inovação de Pato Branco',
+    text: 'Vivência profissional em ambiente público de tecnologia, desenvolvimento, suporte e apoio a soluções digitais.',
+  },
+  {
+    period: '2022 — 2023',
+    title: 'Pato a Jato',
+    subtitle: 'Telemetria · PCB · ESP32 · Eficiência energética',
+    text: 'Atuação na telemetria do protótipo a combustão e apoio no desenvolvimento do primeiro protótipo elétrico da equipe.',
+  },
+  {
+    period: '2022 — 2023',
+    title: 'Robotnik',
+    subtitle: 'Robótica · Extensão · Divulgação científica',
+    text: 'Desenvolvimento de protótipos e ações para aproximar estudantes do ensino médio da engenharia e da tecnologia.',
+  },
+];
+
+const projects = [
+  {
+    title: 'Biometria Neonatal / TCC',
+    href: '/biblioteca/projetos/biometria-neonatal/',
+    text: 'Machine learning aplicado a plataformas embarcadas, com avaliação de desempenho em dispositivos como Raspberry Pi.',
+    tags: ['IA Embarcada', 'ONNX', 'OpenCV', 'Linux'],
+  },
+  {
+    title: 'Pato a Jato',
+    href: '/biblioteca/projetos/pato-a-jato/',
+    text: 'Telemetria, validação de placas de circuito impresso e desenvolvimento com ESP32 em equipe de competição.',
+    tags: ['Telemetria', 'ESP32', 'PCB'],
+  },
+  {
+    title: 'Robotnik',
+    href: '/biblioteca/projetos/robotnik/',
+    text: 'Robótica, divulgação científica e protótipos como hexapod, cubo de LED, robô Otto e mesa de equilíbrio de bola.',
+    tags: ['Robótica', 'Extensão', 'Protótipos'],
+  },
+];
+
+const skills = [
+  'C', 'C++', 'Python', 'Linux', 'Git/GitHub', 'Raspberry Pi', 'ESP32', 'IoT', 'Telemetria',
+  'Sistemas Embarcados', 'Eletrônica Aplicada', 'Sensores', 'Dashboards', 'OpenCV', 'Machine Learning',
+  'Cybersecurity', 'React', 'Tailwind', 'FastAPI', 'SQL', 'Fusion 360', 'PCB', 'Modelagem 3D'
+];
+---
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Portfólio de Guilherme Rodrigues — Engenharia de Computação, sistemas embarcados, IoT, IA aplicada e Segurança da Informação." />
+    <title>Guilherme Rodrigues | Portfólio</title>
+  </head>
+  <body class="academic-home">
+    <header class="site-header">
+      <a class="site-logo" href="#home">Guilherme Rodrigues</a>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="/biblioteca/">Library</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Computer Engineering · UTFPR-PB</p>
+          <h1>Guilherme Rodrigues</h1>
+          <p class="hero-role">I'm a <span>Computer Engineering student</span></p>
+          <p class="hero-summary">
+            Embedded systems, IoT, applied AI, automation and Cybersecurity. A portfolio to organize projects,
+            technical notes, stories, images, videos and the full journey behind each prototype.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/biblioteca/">Open Library</a>
+            <a class="btn" href="#projects">View Projects</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="content-section">
+        <div class="section-heading">
+          <h2>About</h2>
+          <p>
+            A practical engineering journey shaped by projects, research, outreach activities and hands-on learning.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="profile-card">
+            <img src="/images/profile-placeholder.svg" alt="Ilustração de perfil técnico" />
+          </div>
+
+          <div class="about-copy">
+            <h3>Computer Engineering student focused on applied technology.</h3>
+            <p>
+              I am a Computer Engineering student at UTFPR – Pato Branco campus. My interests are mainly in the
+              intersection between software and hardware: embedded systems, sensors, telemetry, IoT, dashboards,
+              Linux, C/C++, Python and applied artificial intelligence.
+            </p>
+            <p>
+              I currently work with the Neonatal Biometrics research group, where my undergraduate thesis studies
+              machine learning on embedded platforms. The idea is to evaluate neural network inference on devices
+              such as Raspberry Pi, analyzing performance, limitations and practical feasibility.
+            </p>
+            <div class="info-list">
+              <div><strong>City:</strong> Pato Branco, Paraná, Brazil</div>
+              <div><strong>Education:</strong> Computer Engineering · UTFPR-PB</div>
+              <div><strong>Focus:</strong> Embedded Systems, IoT, AI, Automation and Cybersecurity</div>
+              <div><strong>Looking for:</strong> Internship opportunities in technology</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section alt-section">
+        <div class="section-heading">
+          <h2>Facts</h2>
+          <p>Some quick facts about my academic and technical path.</p>
+        </div>
+        <div class="facts-grid">
+          {facts.map((fact) => (
+            <article class="fact-card">
+              <strong>{fact.value}</strong>
+              <span>{fact.label}</span>
+              <small>{fact.detail}</small>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="resume" class="content-section">
+        <div class="section-heading">
+          <h2>Resume</h2>
+          <p>Academic experiences, research and student projects that shaped my profile.</p>
+        </div>
+        <div class="timeline">
+          {resumeItems.map((item) => (
+            <article class="timeline-item">
+              <span class="period">{item.period}</span>
+              <h3>{item.title}</h3>
+              <h4>{item.subtitle}</h4>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="projects" class="content-section alt-section">
+        <div class="section-heading">
+          <h2>Projects</h2>
+          <p>
+            Project pages are built to hold long stories, technical explanations, galleries, videos and lessons learned.
+          </p>
+        </div>
+        <div class="project-grid">
+          {projects.map((project) => (
+            <a class="project-card" href={project.href}>
+              <h3>{project.title}</h3>
+              <p>{project.text}</p>
+              <div class="tag-row">
+                {project.tags.map((tag) => <span>{tag}</span>)}
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section id="skills" class="content-section">
+        <div class="section-heading">
+          <h2>Skills</h2>
+          <p>Tools and areas that appear across my projects and studies.</p>
+        </div>
+        <div class="skills-cloud">
+          {skills.map((skill) => <span>{skill}</span>)}
+        </div>
+      </section>
+
+      <section id="library" class="content-section alt-section split-section">
+        <div>
+          <div class="section-heading compact-heading">
+            <h2>Technical Library</h2>
+            <p>
+              The library is the space for everything that does not fit in a simple resume: project histories, technical
+              notes, study logs, images, videos, experiments and documentation.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="/biblioteca/">Explore the library</a>
+        </div>
+        <div class="library-preview">
+          <div>📘 Long-form project stories</div>
+          <div>🖼️ Image galleries and prototypes</div>
+          <div>🎥 Videos and demonstrations</div>
+          <div>🔎 Searchable technical notes</div>
+        </div>
+      </section>
+
+      <section id="contact" class="content-section contact-section">
+        <div class="section-heading">
+          <h2>Contact</h2>
+          <p>Open to internship opportunities in technology, embedded systems, automation, AI and Cybersecurity.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:guilhermerodrigues1921@gmail.com">Email</a>
+          <a class="btn" href="https://github.com/GuilhermeRds1921">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/guilherme-rodrigues-b39a751a7/">LinkedIn</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
