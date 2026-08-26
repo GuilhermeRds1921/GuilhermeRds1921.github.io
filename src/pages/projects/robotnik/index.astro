@@ -1,35 +1,176 @@
 ---
 import PortfolioLayout from '../../../layouts/PortfolioLayout.astro';
+import ExternalImage from '../../../components/ExternalImage.astro';
 import ImageGallery from '../../../components/ImageGallery.astro';
-import robotnikMedia from '../../../data/media/robotnik.json';
+import VideoGallery from '../../../components/VideoGallery.astro';
+import { robotnikMedia } from '../../../data/media/robotnik';
+import { robotnikVideos } from '../../../data/media/videos';
+import { robotnikPageContent as content } from '../../../data/pages/robotnik';
+
+const imagesById = new Map(robotnikMedia.gallery.map((image) => [image.id, image]));
 ---
-<PortfolioLayout title="Robotnik | Guilherme Rodrigues">
-  <section class="project-detail-hero project-hero-robotics">
+
+<PortfolioLayout title={content.meta.title} description={content.meta.description}>
+  <section
+    class="project-detail-hero project-hero-robotics project-hero-image"
+    style={`--project-hero-image: url('${content.hero.image.thumbnailUrl}')`}
+  >
     <div>
-      <p class="eyebrow">Robótica · Extensão</p>
-      <h1>Robotnik</h1>
-      <p>
-        Projeto de robótica e divulgação científica da UTFPR-PB, com protótipos, demonstrações tecnológicas e ações voltadas à comunidade.
-      </p>
-      <div class="tag-row"><span>Robótica</span><span>Extensão</span><span>Cubo de LED</span><span>Hexapod</span><span>Robô Otto</span></div>
+      <p class="eyebrow">{content.hero.category}</p>
+      <h1>{content.hero.title}</h1>
+      <p>{content.hero.description}</p>
+      <div class="tag-row">
+        {content.hero.tags.map((tag) => <span>{tag}</span>)}
+      </div>
     </div>
   </section>
 
-  <article class="content-section longform">
-    <p class="lead">
-      O Robotnik foi meu primeiro grande contato com projetos extracurriculares. Começou no início do curso, com um robô hexapod,
-      e depois se tornou uma porta de entrada para robótica, prototipagem e divulgação tecnológica.
-    </p>
+  <article class="content-section robotnik-page">
+    <section class="project-intro-grid">
+      <div class="project-body longform">
+        <p class="lead">{content.summary}</p>
 
-    <h2>Projetos dentro do Robotnik</h2>
-    <div class="feature-list">
-      <div><strong>Robô hexapod</strong><span>Primeiro projeto desenvolvido na disciplina de Introdução à Engenharia.</span></div>
-      <div><strong>Cubo de LED 8x8x8</strong><span>Projeto visual e eletrônico para demonstrações tecnológicas.</span></div>
-      <div><strong>Robô Otto</strong><span>Robô educacional usado em ações de divulgação.</span></div>
-      <div><strong>Mesa de equilíbrio de bola</strong><span>Mesa robótica de equilíbrio de bola, com controle e integração entre hardware e software.</span></div>
-    </div>
+        <h2>{content.whatIs.title}</h2>
+        {content.whatIs.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
 
-    <h2>Área da galeria</h2>
-    <ImageGallery images={robotnikMedia.images} />
+        <h2>{content.participation.title}</h2>
+        {content.participation.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+
+      <aside class="project-aside robotnik-aside">
+        <strong>Projeto</strong><span>Robotnik</span>
+        <strong>Instituição</strong><span>UTFPR - Campus Pato Branco</span>
+        <strong>Área</strong><span>Robótica e divulgação científica</span>
+        <strong>Participação</strong><span>Prototipagem, eletrônica, montagem, testes e apresentações</span>
+      </aside>
+    </section>
+
+    <section class="project-section">
+      <div class="section-heading compact-heading">
+        <h2>Linha do tempo</h2>
+      </div>
+
+      <div class="project-timeline">
+        {content.timeline.map((item) => (
+          <article>
+            <span>{item.period}</span>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="project-section sicite-section">
+      <div class="section-heading compact-heading">
+        <h2>{content.sicite.title}</h2>
+        <p>{content.sicite.description}</p>
+      </div>
+
+      <div class="sicite-highlight-grid">
+        {content.sicite.highlights.map((highlight) => (
+          <article>
+            <span>✓</span>
+            <p>{highlight}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-heading compact-heading">
+        <h2>Projetos e protótipos</h2>
+        <p>
+          Demonstrações e frentes relacionadas ao grupo, misturando robótica educacional,
+          eletrônica aplicada, controle e atividades para o público.
+        </p>
+      </div>
+
+      <div class="prototype-grid">
+        {content.prototypes.map((prototype) => {
+          const image = prototype.imageId ? imagesById.get(prototype.imageId) : undefined;
+
+          return (
+            <article class="prototype-card">
+              {image && (
+                <div class="prototype-media">
+                  <ExternalImage
+                    image={{
+                      src: image.thumbnailUrl,
+                      alt: image.alt,
+                      fallback: '/images/projects/placeholder.svg',
+                    }}
+                  />
+                </div>
+              )}
+              <div>
+                <h3>{prototype.title}</h3>
+                <p>{prototype.description}</p>
+                <small>{prototype.concepts}</small>
+                <div class="tag-row">
+                  {prototype.tags.map((tag) => <span>{tag}</span>)}
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+
+    <section class="project-section robotnik-gallery">
+      <div class="section-heading compact-heading">
+        <h2>Galeria de imagens</h2>
+        <p>Imagens externas carregadas por miniaturas públicas do Google Drive.</p>
+      </div>
+
+      <ImageGallery
+        images={robotnikMedia.gallery.map((image) => ({
+          src: image.thumbnailUrl,
+          alt: image.alt,
+          caption: image.title,
+          fallback: '/images/projects/placeholder.svg',
+        }))}
+      />
+    </section>
+
+    <section class="project-section">
+      <div class="section-heading compact-heading">
+        <h2>Vídeos do YouTube</h2>
+        <p>Área pronta para demonstrações, apresentações e registros do projeto.</p>
+      </div>
+
+      <VideoGallery videos={robotnikVideos} />
+    </section>
+
+    <section class="project-section project-two-columns">
+      <div>
+        <div class="section-heading compact-heading">
+          <h2>Tecnologias e conceitos</h2>
+        </div>
+
+        <div class="skills-cloud compact-skills">
+          {content.technologies.map((technology) => <span>{technology}</span>)}
+        </div>
+      </div>
+
+      <div class="project-body longform">
+        <h2>Aprendizados</h2>
+        <ul>
+          {content.learnings.map((learning) => <li>{learning}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-section external-links-section">
+      <div class="section-heading compact-heading">
+        <h2>Links externos</h2>
+      </div>
+
+      <div class="contact-card compact-actions">
+        {content.externalLinks.map((link) => (
+          <a class="btn btn-primary" href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+        ))}
+      </div>
+    </section>
   </article>
 </PortfolioLayout>

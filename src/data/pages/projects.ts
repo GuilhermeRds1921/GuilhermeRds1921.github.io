@@ -39,7 +39,7 @@ export const projectListContent = {
       {
         title: 'Robotnik',
         href: '/projects/robotnik/',
-        text: 'Robótica, divulgação científica e protótipos como hexapod, cubo de LED, robô Otto e mesa robótica de equilíbrio de bola.',
+        text: 'Robótica, divulgação científica e protótipos como hexapod, cubo de LED, mesa robótica de equilíbrio de bola e eventos na UTFPR-PB.',
         tags: ['Robótica', 'Extensão', 'Protótipos'],
         media: 'robotics',
         image: projectImage('robotnikCover'),
@@ -91,7 +91,7 @@ export const projectListContent = {
       {
         title: 'Robotnik',
         href: '/en/projects/robotnik/',
-        text: 'Robotics, scientific outreach and prototypes such as a hexapod, LED cube, Otto robot and ball balancing table.',
+        text: 'Robotics, scientific outreach and prototypes such as a hexapod, LED cube, ball balancing table and UTFPR-PB events.',
         tags: ['Robotics', 'Outreach', 'Prototypes'],
         media: 'robotics',
         image: projectImage('robotnikCover'),

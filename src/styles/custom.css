@@ -961,6 +961,15 @@ html[data-theme='light'] .profile-link span {
     linear-gradient(135deg, #060c14, #173b6c 55%, #14c4dd);
 }
 
+.project-hero-image {
+  background:
+    linear-gradient(90deg, rgba(4,11,20,0.9), rgba(4,11,20,0.56), rgba(4,11,20,0.2)),
+    var(--project-hero-image),
+    linear-gradient(135deg, #060c14, #173b6c 55%, #14c4dd);
+  background-position: center;
+  background-size: cover;
+}
+
 .project-hero-control {
   background:
     linear-gradient(90deg, rgba(4,11,20,0.88), rgba(7,48,34,0.58), rgba(41,180,115,0.18)),
@@ -1099,6 +1108,176 @@ html[data-theme='light'] .profile-link span {
   color: var(--muted);
 }
 
+.robotnik-page {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.project-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.project-section {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.compact-heading {
+  margin-bottom: 0;
+}
+
+.compact-heading h2 {
+  margin: 0;
+}
+
+.section-kicker {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.sicite-section {
+  padding: 1.4rem;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+}
+
+.sicite-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.sicite-highlight-grid article {
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+  padding: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+}
+
+.sicite-highlight-grid span {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.sicite-highlight-grid p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.robotnik-gallery .image-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 1.25rem;
+}
+
+.robotnik-gallery .image-card img {
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: var(--soft);
+}
+
+html[data-theme='dark'] .robotnik-gallery .image-card,
+html[data-theme='dark'] .robotnik-gallery .image-card img {
+  background: #020617;
+}
+
+.project-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.project-timeline article,
+.prototype-card {
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  box-shadow: 0 12px 34px rgba(4, 11, 20, 0.06);
+}
+
+.project-timeline article {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  padding: 1.1rem;
+}
+
+.project-timeline span {
+  color: var(--accent-dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.project-timeline h3,
+.prototype-card h3 {
+  margin: 0;
+  color: var(--heading);
+}
+
+.project-timeline p,
+.prototype-card p,
+.prototype-card small {
+  color: var(--muted);
+}
+
+.prototype-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.prototype-card {
+  overflow: hidden;
+}
+
+.prototype-card > div:last-child {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.1rem;
+}
+
+.prototype-media img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: block;
+  object-fit: cover;
+}
+
+.prototype-card small {
+  line-height: 1.55;
+}
+
+.project-two-columns {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+}
+
+.compact-skills {
+  gap: 0.7rem;
+  margin-top: 0.9rem;
+}
+
+.compact-actions {
+  width: fit-content;
+  min-width: min(100%, 280px);
+}
+
 .cert-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -1126,6 +1305,11 @@ html[data-theme='light'] .profile-link span {
   .gallery-grid,
   .feature-list,
   .project-layout-grid,
+  .project-intro-grid,
+  .project-timeline,
+  .sicite-highlight-grid,
+  .prototype-grid,
+  .project-two-columns,
   .cert-grid,
   .contact-grid {
     grid-template-columns: 1fr;
@@ -1534,6 +1718,10 @@ main,
 .timeline-item,
 .contact-card,
 .cert-card,
+.sicite-section,
+.sicite-highlight-grid article,
+.project-timeline article,
+.prototype-card,
 .profile-card,
 .feature-list > div,
 .about-copy,
@@ -1547,6 +1735,8 @@ main,
 .fact-card strong,
 .structure-card strong,
 .cert-card h2,
+.project-timeline h3,
+.prototype-card h3,
 .timeline-item h3,
 .feature-list strong,
 .about-copy h3 {
@@ -1556,6 +1746,10 @@ main,
 .project-card p,
 .structure-card span,
 .cert-card p,
+.sicite-highlight-grid p,
+.project-timeline p,
+.prototype-card p,
+.prototype-card small,
 .timeline-item p,
 .feature-list span,
 .about-copy p,
