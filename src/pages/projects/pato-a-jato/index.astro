@@ -1,51 +1,170 @@
 ---
 import PortfolioLayout from '../../../layouts/PortfolioLayout.astro';
-import VideoEmbed from '../../../components/VideoEmbed.astro';
+import ExternalImage from '../../../components/ExternalImage.astro';
 import ImageGallery from '../../../components/ImageGallery.astro';
-import { projectGallery } from '../../../lib/media';
+import VideoGallery from '../../../components/VideoGallery.astro';
+import { patoAJatoMedia } from '../../../data/media/patoAJato';
+import { patoAJatoVideos } from '../../../data/media/videos';
+import { patoAJatoPageContent as content } from '../../../data/pages/patoAJato';
 
-const gallery = projectGallery('patoAJato');
+const imagesById = new Map(patoAJatoMedia.cards.map((image) => [image.id, image]));
+const showPatoVideosInDev = import.meta.env.DEV && patoAJatoVideos.length > 0;
 ---
-<PortfolioLayout title="Pato a Jato | Guilherme Rodrigues">
-  <section class="project-detail-hero project-hero-car">
+
+<PortfolioLayout title={content.meta.title} description={content.meta.description}>
+  <section
+    class="project-detail-hero project-hero-car project-hero-image"
+    style={`--project-hero-image: url('${content.hero.image.thumbnailUrl}')`}
+  >
     <div>
-      <p class="eyebrow">Competição · Telemetria · PCB</p>
-      <h1>Pato a Jato</h1>
-      <p>
-        Participação em equipe de competição de eficiência energética, atuando com telemetria, ESP32 e desenvolvimento/validação de placas de circuito impresso.
-      </p>
-      <div class="tag-row"><span>Telemetria</span><span>ESP32</span><span>PCB</span><span>Competição</span></div>
+      <p class="eyebrow">{content.hero.category}</p>
+      <h1>{content.hero.title}</h1>
+      <p>{content.hero.description}</p>
+      <div class="tag-row">
+        {content.hero.tags.map((tag) => <span>{tag}</span>)}
+      </div>
     </div>
   </section>
 
-  <article class="content-section project-layout-grid">
-    <aside class="project-aside">
-      <strong>Equipe</strong><span>Pato a Jato</span>
-      <strong>Período</strong><span>2022–2023</span>
-      <strong>Resultado</strong><span>2º lugar · categoria combustão</span>
-      <strong>Foco</strong><span>Telemetria e eletrônica</span>
-    </aside>
+  <article class="content-section robotnik-page pato-page">
+    <section class="project-intro-grid">
+      <div class="project-body longform">
+        <p class="lead">{content.summary}</p>
 
-    <div class="project-body longform">
-      <h2>História</h2>
-      <p>
-        O Pato a Jato foi uma das experiências mais marcantes da minha graduação. Participei da telemetria do protótipo a combustão e do desenvolvimento,
-        fabricação e validação das placas de circuito impresso do primeiro protótipo elétrico da equipe.
-      </p>
-      <p>
-        Esta página foi pensada para receber fotos da oficina, das placas, da CNC, dos protótipos, da viagem e da competição no Rio de Janeiro.
-      </p>
+        <h2>{content.whatIs.title}</h2>
+        {content.whatIs.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
 
-      <h2>Mídia</h2>
-      <VideoEmbed title="Demonstração ou relato da competição" caption="Área para colocar vídeo do protótipo, apresentação ou bastidores." />
+        <h2>{content.participation.title}</h2>
+        {content.participation.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
 
-      <h2>Galeria</h2>
-      <ImageGallery images={gallery} />
+      <aside class="project-aside pato-aside">
+        <strong>Equipe</strong><span>Pato a Jato</span>
+        <strong>Instituição</strong><span>UTFPR - Campus Pato Branco</span>
+        <strong>Área</strong><span>Eficiência energética e eletrônica embarcada</span>
+        <strong>Participação</strong><span>Telemetria, ESP32, PCBs, CNC, testes e competição</span>
+      </aside>
+    </section>
 
-      <h2>O que aprendi</h2>
-      <p>
-        A experiência envolveu trabalho em equipe, validação prática, eletrônica aplicada, prototipagem, documentação e a pressão real de uma competição.
-      </p>
-    </div>
+    <section class="project-section">
+      <div class="section-heading compact-heading">
+        <h2>Linha do tempo</h2>
+      </div>
+
+      <div class="project-timeline">
+        {content.timeline.map((item) => (
+          <article>
+            <span>{item.period}</span>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-heading compact-heading">
+        <h2>Frentes de atuação</h2>
+        <p>
+          Áreas em que participei dentro da equipe, passando por eletrônica,
+          prototipagem, validação e apresentação do projeto.
+        </p>
+      </div>
+
+      <div class="prototype-grid">
+        {content.prototypes.map((prototype) => {
+          const image = prototype.imageId ? imagesById.get(prototype.imageId) : undefined;
+
+          return (
+            <article class="prototype-card">
+              {image && (
+                <div class="prototype-media pending-media">
+                  <ExternalImage
+                    image={{
+                      src: image.thumbnailUrl,
+                      alt: image.alt,
+                      fallback: '/images/projects/placeholder.svg',
+                    }}
+                  />
+                </div>
+              )}
+              <div>
+                <h3>{prototype.title}</h3>
+                <p>{prototype.description}</p>
+                <small>{prototype.concepts}</small>
+                <div class="tag-row">
+                  {prototype.tags.map((tag) => <span>{tag}</span>)}
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+
+    <section class="project-section pato-gallery">
+      <div class="section-heading compact-heading">
+        <h2>{content.gallery.title}</h2>
+        <p>{content.gallery.description}</p>
+      </div>
+
+      {patoAJatoMedia.gallery.length > 0 ? (
+        <ImageGallery
+          images={patoAJatoMedia.gallery.map((image) => ({
+            src: image.thumbnailUrl,
+            alt: image.alt,
+            caption: image.title,
+            fallback: '/images/projects/placeholder.svg',
+          }))}
+        />
+      ) : (
+        <p class="empty-media-note">{content.gallery.empty}</p>
+      )}
+    </section>
+
+    {/* Area preparada para videos do YouTube. Mantida fora de producao enquanto nao houver embeds publicados. */}
+    {showPatoVideosInDev && (
+      <section class="project-section">
+        <div class="section-heading compact-heading">
+          <h2>Vídeos do YouTube</h2>
+          <p>Área pronta para bastidores, telemetria, exibições e registros de competição.</p>
+        </div>
+
+        <VideoGallery videos={patoAJatoVideos} />
+      </section>
+    )}
+
+    <section class="project-section project-two-columns">
+      <div>
+        <div class="section-heading compact-heading">
+          <h2>Tecnologias e conceitos</h2>
+        </div>
+
+        <div class="skills-cloud compact-skills">
+          {content.technologies.map((technology) => <span>{technology}</span>)}
+        </div>
+      </div>
+
+      <div class="project-body longform">
+        <h2>Aprendizados</h2>
+        <ul>
+          {content.learnings.map((learning) => <li>{learning}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    {content.externalLinks.length > 0 && (
+      <section class="project-section external-links-section">
+        <div class="section-heading compact-heading">
+          <h2>Links externos</h2>
+        </div>
+
+        <div class="contact-card compact-actions">
+          {content.externalLinks.map((link) => (
+            <a class="btn btn-primary" href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+          ))}
+        </div>
+      </section>
+    )}
   </article>
 </PortfolioLayout>

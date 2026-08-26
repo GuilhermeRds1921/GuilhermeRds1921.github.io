@@ -1196,6 +1196,30 @@ html[data-theme='dark'] .robotnik-gallery .image-card img {
   background: #020617;
 }
 
+.pending-media {
+  background: var(--soft);
+}
+
+.pending-media img {
+  object-fit: contain;
+  padding: 1.25rem;
+}
+
+.empty-media-note {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  color: var(--muted);
+  background: var(--soft);
+  border: 1px dashed var(--line);
+  border-radius: 0.7rem;
+  line-height: 1.6;
+}
+
+html[data-theme='dark'] .pending-media,
+html[data-theme='dark'] .empty-media-note {
+  background: #020617;
+}
+
 .project-timeline {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));

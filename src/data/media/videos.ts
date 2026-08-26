@@ -16,3 +16,11 @@ export const robotnikVideos: PortfolioVideo[] = [
   },
 ];
 
+export const patoAJatoVideos: PortfolioVideo[] = [
+  {
+    id: 'pato-placeholder',
+    title: 'Vídeos do Pato a Jato',
+    caption: 'Seção pronta para receber bastidores, telemetria, exibições e registros de competição via YouTube.',
+    project: 'pato-a-jato',
+  },
+];
