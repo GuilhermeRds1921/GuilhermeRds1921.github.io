@@ -6,6 +6,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'Guilherme Rodrigues',
+      favicon: '/favicon.svg',
       social: [
         {
           icon: 'github',
