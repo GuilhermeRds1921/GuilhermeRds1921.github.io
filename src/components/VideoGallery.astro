@@ -1,8 +1,10 @@
 ---
+import { youtubeEmbedUrl } from '../lib/media';
+
 type VideoItem = {
   title: string;
   youtubeId?: string;
-  src?: string;
+  youtubeUrl?: string;
   caption?: string;
 };
 
@@ -12,16 +14,20 @@ const { videos = [] } = Astro.props as { videos: VideoItem[] };
 <div class="media-grid">
   {videos.map((video) => (
     <div class="media-frame">
-      {video.youtubeId ? (
+      {youtubeEmbedUrl(video) ? (
         <iframe
           title={video.title}
-          src={`https://www.youtube.com/embed/${video.youtubeId}`}
+          src={youtubeEmbedUrl(video)}
           loading="lazy"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
         />
+      ) : video.youtubeUrl ? (
+        <a class="video-placeholder video-link-placeholder" href={video.youtubeUrl} target="_blank" rel="noreferrer">
+          Abrir no YouTube
+        </a>
       ) : (
-        <video controls src={video.src} style="width:100%;aspect-ratio:16/9;display:block;object-fit:cover"></video>
+        <div class="video-placeholder">▶</div>
       )}
       {(video.caption || video.title) && <div class="media-caption">{video.caption ?? video.title}</div>}
     </div>

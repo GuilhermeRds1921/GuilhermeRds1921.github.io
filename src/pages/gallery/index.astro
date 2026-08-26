@@ -1,15 +1,10 @@
 ---
 import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
 import PageHeader from '../../components/PageHeader.astro';
+import ExternalImage from '../../components/ExternalImage.astro';
+import galleryMedia from '../../data/media/gallery.json';
 
-const albums = [
-  { title: 'Biometria Neonatal', caption: 'Configuração, testes, execução e resultados do TCC.' },
-  { title: 'Pato a Jato', caption: 'Oficina, PCBs, protótipos e competição.' },
-  { title: 'Robotnik', caption: 'Robôs, cubo de LED, oficinas e divulgação científica.' },
-  { title: 'Eventos UTFPR', caption: 'Feiras, cursos, oficinas e ações com a comunidade.' },
-  { title: 'Eletrônica e PCB', caption: 'Placas, CNC, validações e montagens.' },
-  { title: 'Laboratório', caption: 'Bancadas, protótipos, testes e bastidores.' },
-];
+const albums = galleryMedia.albums;
 ---
 <PortfolioLayout title="Galeria | Guilherme Rodrigues">
   <PageHeader eyebrow="Arquivo de mídia" title="Galeria" description="Um espaço dedicado para imagens de projetos, protótipos, eventos, laboratórios, PCBs, robôs, competições e bastidores." />
@@ -18,7 +13,7 @@ const albums = [
     <div class="gallery-grid">
       {albums.map((album) => (
         <figure>
-          <img src="/images/projects/placeholder.svg" alt={album.title} />
+          <ExternalImage image={album.image} />
           <figcaption><strong>{album.title}</strong><span>{album.caption}</span></figcaption>
         </figure>
       ))}

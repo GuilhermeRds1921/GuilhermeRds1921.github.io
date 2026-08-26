@@ -1,17 +1,22 @@
 ---
+import ExternalImage from './ExternalImage.astro';
+import type { MediaImage, ResolvedMediaImage } from '../lib/media';
+
 type ImageItem = {
-  src: string;
+  src?: string;
+  driveFileId?: string;
   alt: string;
   caption?: string;
+  fallback?: string;
 };
 
-const { images = [] } = Astro.props as { images: ImageItem[] };
+const { images = [] } = Astro.props as { images: Array<ImageItem | MediaImage | ResolvedMediaImage> };
 ---
 
 <div class="image-grid">
   {images.map((image) => (
     <figure class="image-card">
-      <img src={image.src} alt={image.alt} loading="lazy" />
+      <ExternalImage image={image} />
       {image.caption && <figcaption>{image.caption}</figcaption>}
     </figure>
   ))}

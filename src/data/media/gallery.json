@@ -1,0 +1,59 @@
+{
+  "fallback": "/images/projects/placeholder.svg",
+  "albums": [
+    {
+      "title": "Biometria Neonatal",
+      "caption": "Configuração, testes, execução e resultados do TCC.",
+      "image": {
+        "driveFileId": "12gZJB-TwniKk35f9_UcSmwSvCQFwj36W",
+        "alt": "Imagem de álbum de Biometria Neonatal",
+        "fallback": "/images/projects/placeholder.svg"
+      }
+    },
+    {
+      "title": "Pato a Jato",
+      "caption": "Oficina, PCBs, protótipos e competição.",
+      "image": {
+        "driveFileId": "1H2UgUvgxqdrGZOi-MEJ4g3DU98vSB-Fl",
+        "alt": "Imagem de álbum do Pato a Jato",
+        "fallback": "/images/projects/placeholder.svg"
+      }
+    },
+    {
+      "title": "Robotnik",
+      "caption": "Robôs, cubo de LED, oficinas e divulgação científica.",
+      "image": {
+        "driveFileId": "13sSY-8t9n3W1nFjwr7fGsGNEqxlJeB-J",
+        "alt": "Imagem de álbum do Robotnik",
+        "fallback": "/images/projects/placeholder.svg"
+      }
+    },
+    {
+      "title": "Eventos UTFPR",
+      "caption": "Feiras, cursos, oficinas e ações com a comunidade.",
+      "image": {
+        "driveFileId": "",
+        "alt": "Imagem de álbum de eventos da UTFPR",
+        "fallback": "/images/projects/placeholder.svg"
+      }
+    },
+    {
+      "title": "Eletrônica e PCB",
+      "caption": "Placas, CNC, validações e montagens.",
+      "image": {
+        "driveFileId": "",
+        "alt": "Imagem de álbum de eletrônica e PCB",
+        "fallback": "/images/projects/placeholder.svg"
+      }
+    },
+    {
+      "title": "Laboratório",
+      "caption": "Bancadas, protótipos, testes e bastidores.",
+      "image": {
+        "driveFileId": "",
+        "alt": "Imagem de álbum de laboratório",
+        "fallback": "/images/projects/placeholder.svg"
+      }
+    }
+  ]
+}

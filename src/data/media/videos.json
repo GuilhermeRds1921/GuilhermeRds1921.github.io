@@ -1,0 +1,24 @@
+{
+  "videos": [
+    {
+      "title": "Biometria Neonatal / TCC",
+      "youtubeId": "",
+      "caption": "Vídeo explicando o problema, fluxo de processamento e testes em embarcados."
+    },
+    {
+      "title": "GeAstro",
+      "youtubeId": "",
+      "caption": "Registros de astronomia, observações e divulgação científica."
+    },
+    {
+      "title": "Pato a Jato",
+      "youtubeId": "",
+      "caption": "Bastidores, telemetria e competição."
+    },
+    {
+      "title": "Robotnik",
+      "youtubeId": "",
+      "caption": "Robôs, demonstrações e divulgação científica."
+    }
+  ]
+}

@@ -9,7 +9,11 @@ const { content, projects } = Astro.props as {
 };
 ---
 
-<section id="home" class="hero-section">
+<section
+  id="home"
+  class="hero-section"
+  style={content.hero.image?.src ? `--hero-image: url('${content.hero.image.src}')` : undefined}
+>
   <div class="hero-content">
     <h1>{content.hero.name}</h1>
 
@@ -28,7 +32,7 @@ const { content, projects } = Astro.props as {
 
   <div class="about-grid">
     <div class="profile-card">
-      <img src="/images/profile.jpg" alt="Foto de Guilherme Rodrigues" />
+      <img src="/images/profile.jpg" alt="Foto de Guilherme Rodrigues" loading="lazy" decoding="async" />
     </div>
 
     <div class="about-copy">

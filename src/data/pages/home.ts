@@ -1,4 +1,5 @@
 import type { Lang } from '../../lib/i18n';
+import { projectImage } from '../../lib/media';
 
 export const homeContent = {
   pt: {
@@ -13,6 +14,7 @@ export const homeContent = {
       roleHighlight: 'Engenharia de Computação',
       summary:
         'Portfólio, arquivo de projetos e biblioteca técnica. Um espaço para organizar protótipos, histórias, vídeos, fotos, anotações de pesquisa e tudo que venho construindo com software, hardware, IoT, inteligência artificial e Segurança da Informação.',
+      image: projectImage('portfolioHero'),
     },
     about: {
       title: 'Sobre',
@@ -92,6 +94,7 @@ export const homeContent = {
       roleHighlight: 'Computer Engineering student',
       summary:
         'Portfolio, project archive and technical library. A place to organize prototypes, stories, videos, photos, research notes and what I have been building with software, hardware, IoT, artificial intelligence and cybersecurity.',
+      image: projectImage('portfolioHero'),
     },
     about: {
       title: 'About',

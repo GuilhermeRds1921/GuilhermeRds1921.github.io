@@ -1,5 +1,9 @@
 ---
 import PortfolioLayout from '../../../layouts/PortfolioLayout.astro';
+import ExternalImage from '../../../components/ExternalImage.astro';
+import { projectImage } from '../../../lib/media';
+
+const cover = projectImage('geastroCover');
 ---
 <PortfolioLayout title="GeAstro | Guilherme Rodrigues">
   <section class="project-detail-hero project-hero-control">
@@ -29,7 +33,7 @@ import PortfolioLayout from '../../../layouts/PortfolioLayout.astro';
 
       <div class="image-grid">
         <figure class="image-card">
-          <img src="/images/projects/geastro/cover.jpg" alt="Registro do projeto GeAstro" />
+          <ExternalImage image={cover} />
           <figcaption>GeAstro</figcaption>
         </figure>
       </div>

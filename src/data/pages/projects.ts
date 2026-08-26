@@ -1,11 +1,5 @@
 import type { Lang } from '../../lib/i18n';
-
-const sharedImages = {
-  biometria: '/images/projects/biometria-neonatal/cover.jpg',
-  pato: '/images/projects/pato-a-jato/cover.jpg',
-  robotnik: '/images/projects/robotnik/cover.png',
-  geastro: '/images/projects/geastro/cover.jpg',
-};
+import { projectImage } from '../../lib/media';
 
 export const projectListContent = {
   pt: {
@@ -32,7 +26,7 @@ export const projectListContent = {
         text: 'Integração de machine learning em plataformas embarcadas, avaliando inferência de redes neurais em Raspberry Pi e ARM Linux.',
         tags: ['TCC', 'Aprendizado de Máquina', 'Raspberry Pi', 'ONNX'],
         media: 'ai',
-        image: sharedImages.biometria,
+        image: projectImage('biometriaCover'),
       },
       {
         title: 'Pato a Jato',
@@ -40,7 +34,7 @@ export const projectListContent = {
         text: 'Telemetria, desenvolvimento com ESP32, fabricação e validação de PCBs em equipe de competição de eficiência energética.',
         tags: ['Competição', 'Telemetria', 'PCB', 'ESP32'],
         media: 'car',
-        image: sharedImages.pato,
+        image: projectImage('patoCover'),
       },
       {
         title: 'Robotnik',
@@ -48,7 +42,7 @@ export const projectListContent = {
         text: 'Robótica, divulgação científica e protótipos como hexapod, cubo de LED, robô Otto e mesa robótica de equilíbrio de bola.',
         tags: ['Robótica', 'Extensão', 'Protótipos'],
         media: 'robotics',
-        image: sharedImages.robotnik,
+        image: projectImage('robotnikCover'),
       },
       {
         title: 'GeAstro',
@@ -56,7 +50,7 @@ export const projectListContent = {
         text: 'Astronomia, observações e divulgação científica para aproximar tecnologia, ciência e comunidade.',
         tags: ['Astronomia', 'Extensão', 'Ciência'],
         media: 'control',
-        image: sharedImages.geastro,
+        image: projectImage('geastroCover'),
       },
     ],
   },
@@ -84,7 +78,7 @@ export const projectListContent = {
         text: 'Machine learning integration in embedded platforms, evaluating neural network inference on Raspberry Pi and ARM Linux.',
         tags: ['Thesis', 'Machine Learning', 'Raspberry Pi', 'ONNX'],
         media: 'ai',
-        image: sharedImages.biometria,
+        image: projectImage('biometriaCover'),
       },
       {
         title: 'Pato a Jato',
@@ -92,7 +86,7 @@ export const projectListContent = {
         text: 'Telemetry, ESP32 development, PCB fabrication and validation for an energy efficiency student competition team.',
         tags: ['Competition', 'Telemetry', 'PCB', 'ESP32'],
         media: 'car',
-        image: sharedImages.pato,
+        image: projectImage('patoCover'),
       },
       {
         title: 'Robotnik',
@@ -100,7 +94,7 @@ export const projectListContent = {
         text: 'Robotics, scientific outreach and prototypes such as a hexapod, LED cube, Otto robot and ball balancing table.',
         tags: ['Robotics', 'Outreach', 'Prototypes'],
         media: 'robotics',
-        image: sharedImages.robotnik,
+        image: projectImage('robotnikCover'),
       },
       {
         title: 'GeAstro',
@@ -108,7 +102,7 @@ export const projectListContent = {
         text: 'Astronomy, observations and scientific outreach to connect technology, science and the community.',
         tags: ['Astronomy', 'Outreach', 'Science'],
         media: 'control',
-        image: sharedImages.geastro,
+        image: projectImage('geastroCover'),
       },
     ],
   },

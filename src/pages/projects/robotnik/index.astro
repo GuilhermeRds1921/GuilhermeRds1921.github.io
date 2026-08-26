@@ -1,5 +1,7 @@
 ---
 import PortfolioLayout from '../../../layouts/PortfolioLayout.astro';
+import ImageGallery from '../../../components/ImageGallery.astro';
+import robotnikMedia from '../../../data/media/robotnik.json';
 ---
 <PortfolioLayout title="Robotnik | Guilherme Rodrigues">
   <section class="project-detail-hero project-hero-robotics">
@@ -28,10 +30,6 @@ import PortfolioLayout from '../../../layouts/PortfolioLayout.astro';
     </div>
 
     <h2>Área da galeria</h2>
-    <div class="gallery-grid compact-gallery">
-      <figure><img src="/images/projects/placeholder.svg" alt="Placeholder" /><figcaption>Robôs e protótipos</figcaption></figure>
-      <figure><img src="/images/projects/placeholder.svg" alt="Placeholder" /><figcaption>Eventos em escolas</figcaption></figure>
-      <figure><img src="/images/projects/placeholder.svg" alt="Placeholder" /><figcaption>Demonstrações na UTFPR</figcaption></figure>
-    </div>
+    <ImageGallery images={robotnikMedia.images} />
   </article>
 </PortfolioLayout>

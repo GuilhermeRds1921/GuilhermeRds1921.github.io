@@ -1,9 +1,11 @@
 ---
-const { title, href, text, tags = [], media = 'placeholder', image = '' } = Astro.props;
+import ExternalImage from './ExternalImage.astro';
+
+const { title, href, text, tags = [], media = 'placeholder', image } = Astro.props;
 ---
 <a class="project-card rich-project-card" href={href}>
   <div class="project-thumb" data-media={media}>
-    {image && <img src={image} alt="" loading="lazy" />}
+    {image && <ExternalImage image={image} />}
   </div>
   <div>
     <h3>{title}</h3>
