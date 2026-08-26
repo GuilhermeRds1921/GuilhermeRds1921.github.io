@@ -34,11 +34,11 @@ Aqui entra a parte grande do portfólio. Pode escrever sem medo: contexto, decis
 
 ## Galeria de imagens
 
-Coloque as imagens em `public/images/projects/nome-do-projeto/` e ajuste os caminhos.
+Coloque as imagens no Google Drive como arquivos públicos e registre os metadados em `src/data/media/`.
 
 <ImageGallery images={[
   {
-    src: '/images/projects/placeholder.svg',
+    driveFileId: 'ID_PUBLICO_DO_ARQUIVO_NO_GOOGLE_DRIVE',
     alt: 'Descrição da imagem',
     caption: 'Legenda da imagem'
   }
@@ -46,7 +46,7 @@ Coloque as imagens em `public/images/projects/nome-do-projeto/` e ajuste os cami
 
 ## Vídeos
 
-Use `youtubeId` para vídeos do YouTube ou `src` para vídeos próprios em `public/videos/`.
+Use `youtubeId` ou `youtubeUrl` para vídeos do YouTube. Não armazene vídeos próprios no projeto.
 
 <VideoGallery videos={[
   {

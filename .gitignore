@@ -2,3 +2,16 @@ node_modules/
 dist/
 .astro/
 .DS_Store
+
+# Mídia pesada deve ficar no Google Drive e ser referenciada em src/data/media/.
+public/images/projects/**/*.jpg
+public/images/projects/**/*.jpeg
+public/images/projects/**/*.png
+public/images/projects/**/*.webp
+public/images/projects/**/*.avif
+public/**/*.mp4
+public/**/*.mov
+public/**/*.avi
+public/**/*.mkv
+public/**/*.webm
+public/**/*.pdf
