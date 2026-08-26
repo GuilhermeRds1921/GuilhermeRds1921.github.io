@@ -8,6 +8,7 @@ import { robotnikVideos } from '../../../data/media/videos';
 import { robotnikPageContent as content } from '../../../data/pages/robotnik';
 
 const imagesById = new Map(robotnikMedia.gallery.map((image) => [image.id, image]));
+const showRobotnikVideosInDev = import.meta.env.DEV && robotnikVideos.length > 0;
 ---
 
 <PortfolioLayout title={content.meta.title} description={content.meta.description}>
@@ -133,14 +134,17 @@ const imagesById = new Map(robotnikMedia.gallery.map((image) => [image.id, image
       />
     </section>
 
-    <section class="project-section">
-      <div class="section-heading compact-heading">
-        <h2>Vídeos do YouTube</h2>
-        <p>Área pronta para demonstrações, apresentações e registros do projeto.</p>
-      </div>
+    {/* Area preparada para videos do YouTube. Mantida fora de producao enquanto nao houver embeds publicados. */}
+    {showRobotnikVideosInDev && (
+      <section class="project-section">
+        <div class="section-heading compact-heading">
+          <h2>Vídeos do YouTube</h2>
+          <p>Área pronta para demonstrações, apresentações e registros do projeto.</p>
+        </div>
 
-      <VideoGallery videos={robotnikVideos} />
-    </section>
+        <VideoGallery videos={robotnikVideos} />
+      </section>
+    )}
 
     <section class="project-section project-two-columns">
       <div>
