@@ -1,0 +1,20 @@
+---
+import PageHeader from './PageHeader.astro';
+import type { CertificationsContent } from '../data/pages/certifications';
+
+const { content } = Astro.props as { content: CertificationsContent };
+---
+
+<PageHeader {...content.header} />
+
+<section class="content-section">
+  <div class="cert-grid">
+    {content.certificates.map((cert) => (
+      <article class="cert-card">
+        <span>✓</span>
+        <h2>{cert}</h2>
+        <p>{content.cardDescription}</p>
+      </article>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,97 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import type { HomeContent } from '../data/pages/home';
+import type { ProjectListContent } from '../data/pages/projects';
+
+const { content, projects } = Astro.props as {
+  content: HomeContent;
+  projects: ProjectListContent['projects'];
+};
+---
+
+<section id="home" class="hero-section">
+  <div class="hero-content">
+    <h1>{content.hero.name}</h1>
+
+    <p class="hero-role">
+      {content.hero.rolePrefix} <span>{content.hero.roleHighlight}</span>
+    </p>
+
+    <p class="hero-summary">{content.hero.summary}</p>
+  </div>
+</section>
+
+<section id="about" class="content-section">
+  <div class="section-heading">
+    <h2>{content.about.title}</h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="profile-card">
+      <img src="/images/profile.jpg" alt="Foto de Guilherme Rodrigues" />
+    </div>
+
+    <div class="about-copy">
+      <h3>{content.about.heading}</h3>
+
+      {content.about.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+
+      <div class="info-list">
+        {content.about.info.map(([label, value]) => (
+          <div><strong>{label}</strong> {value}</div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="content-section">
+  <div class="section-heading">
+    <h2>{content.projects.title}</h2>
+    <p>{content.projects.description}</p>
+  </div>
+
+  <div class="project-grid project-grid-2x">
+    {projects.map((project) => <ProjectCard {...project} />)}
+  </div>
+</section>
+
+<section id="content-map" class="content-section alt-section">
+  <div class="section-heading">
+    <h2>{content.contentMap.title}</h2>
+    <p>{content.contentMap.description}</p>
+  </div>
+
+  <div class="structure-grid">
+    {content.contentMap.items.map(([title, description, href]) => (
+      <a href={href} class="structure-card">
+        <strong>{title}</strong>
+        <span>{description}</span>
+      </a>
+    ))}
+  </div>
+</section>
+
+<section id="skills" class="content-section">
+  <div class="section-heading">
+    <h2>{content.skills.title}</h2>
+    <p>{content.skills.description}</p>
+  </div>
+
+  <div class="skills-cloud">
+    {content.skills.items.map((skill) => <span>{skill}</span>)}
+  </div>
+</section>
+
+<section id="contact" class="content-section contact-section alt-section">
+  <div class="section-heading">
+    <h2>{content.contact.title}</h2>
+    <p>{content.contact.description}</p>
+  </div>
+
+  <div class="contact-card">
+    <a class="btn btn-primary" href="mailto:guilhermerodrigues1921@gmail.com">Email</a>
+    <a class="btn" href="https://github.com/GuilhermeRds1921" target="_blank" rel="noreferrer">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/guilherme-rodrigues-b39a751a7/" target="_blank" rel="noreferrer">LinkedIn</a>
+  </div>
+</section>

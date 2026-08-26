@@ -1,0 +1,19 @@
+---
+import PageHeader from './PageHeader.astro';
+import ProjectCard from './ProjectCard.astro';
+import type { ProjectListContent } from '../data/pages/projects';
+
+const { content } = Astro.props as { content: ProjectListContent };
+---
+
+<PageHeader {...content.header} />
+
+<section class="content-section">
+  <div class="section-heading">
+    <h2>{content.intro.title}</h2>
+    <p>{content.intro.description}</p>
+  </div>
+  <div class="project-grid project-grid-2x">
+    {content.projects.map((project) => <ProjectCard {...project} />)}
+  </div>
+</section>

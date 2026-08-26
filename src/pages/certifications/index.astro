@@ -1,27 +1,11 @@
 ---
 import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
-import PageHeader from '../../components/PageHeader.astro';
+import CertificationsPage from '../../components/CertificationsPage.astro';
+import { certificationsContent } from '../../data/pages/certifications';
 
-const certs = [
-  'CyberOps Associate',
-  'Introduction to Cybersecurity',
-  'Introduction to IoT',
-  'Networking Academy Learn-A-Thon 2020',
-  'Atlas Essentials',
-];
+const content = certificationsContent.pt;
 ---
-<PortfolioLayout title="Certifications | Guilherme Rodrigues">
-  <PageHeader eyebrow="Learning" title="Certifications" description="Courses, certifications and learning tracks connected to cybersecurity, IoT, networking and technology." />
 
-  <section class="content-section">
-    <div class="cert-grid">
-      {certs.map((cert) => (
-        <article class="cert-card">
-          <span>✓</span>
-          <h2>{cert}</h2>
-          <p>Espaço para adicionar certificado, data, instituição, arquivo PDF ou link de validação.</p>
-        </article>
-      ))}
-    </div>
-  </section>
+<PortfolioLayout title={content.meta.title} description={content.meta.description}>
+  <CertificationsPage content={content} />
 </PortfolioLayout>

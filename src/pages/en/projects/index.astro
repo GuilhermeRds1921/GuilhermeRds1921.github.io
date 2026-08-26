@@ -1,0 +1,11 @@
+---
+import PortfolioLayout from '../../../layouts/PortfolioLayout.astro';
+import ProjectsPage from '../../../components/ProjectsPage.astro';
+import { projectListContent } from '../../../data/pages/projects';
+
+const content = projectListContent.en;
+---
+
+<PortfolioLayout title={content.meta.title} description={content.meta.description}>
+  <ProjectsPage content={content} />
+</PortfolioLayout>

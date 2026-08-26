@@ -19,11 +19,6 @@ const navItems = [
     icon: `<svg viewBox="0 0 24 24"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10l2 2h5.5A2.5 2.5 0 0 1 20 8.5v9A2.5 2.5 0 0 1 17.5 20h-11A2.5 2.5 0 0 1 4 17.5v-11z"/></svg>`,
   },
   {
-    href: isPT ? '/stories/' : '/en/stories/',
-    label: isPT ? 'Histórias' : 'Stories',
-    icon: `<svg viewBox="0 0 24 24"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H19v17H7.5A2.5 2.5 0 0 0 5 21.5v-17zM7.5 4A.5.5 0 0 0 7 4.5v14.55c.17-.03.33-.05.5-.05H17V4H7.5z"/></svg>`,
-  },
-  {
     href: isPT ? '/gallery/' : '/en/gallery/',
     label: isPT ? 'Galeria' : 'Gallery',
     icon: `<svg viewBox="0 0 24 24"><path d="M5 5h14v14H5V5zm2 2v10h10V7H7zm1.2 8 2.6-3.2 1.8 2.2 1.3-1.6L16.5 15H8.2zM14.5 10a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>`,
@@ -115,10 +110,41 @@ const navItems = [
     </nav>
 
     <div class="sidebar-tools">
-    <button type="button" class="theme-toggle" data-theme-toggle>
-      <span data-theme-icon>☾</span>
-      <span data-theme-label>{isPT ? 'Modo escuro' : 'Dark mode'}</span>
-    </button>
-  </div>
+      <div class="language-picker">
+        <a
+          class:list={['language-icon-button', { active: isPT }]}
+          href={ptPath}
+          data-lang-link
+          aria-label={isPT ? 'Português do Brasil' : 'Brazilian Portuguese'}
+          title={isPT ? 'Português do Brasil' : 'Brazilian Portuguese'}
+        >
+          <span>🇧🇷</span>
+        </a>
+
+        <button
+          type="button"
+          class:list={['language-icon-button', { active: !isPT }]}
+          data-language-menu-toggle
+          aria-label={isPT ? 'Escolher outro idioma' : 'Choose another language'}
+          aria-expanded="false"
+          aria-controls="language-menu"
+          title={isPT ? 'Escolher outro idioma' : 'Choose another language'}
+        >
+          <span>🌐</span>
+        </button>
+
+        <div id="language-menu" class="language-menu" data-language-menu hidden>
+          <a href={enPath} data-lang-link>
+            <strong>English</strong>
+            <span>EN</span>
+          </a>
+        </div>
+      </div>
+
+      <button type="button" class="theme-toggle" data-theme-toggle>
+        <span data-theme-icon>☾</span>
+        <span data-theme-label>{isPT ? 'Modo escuro' : 'Dark mode'}</span>
+      </button>
+    </div>
   </div>
 </aside>

@@ -1,55 +1,11 @@
 ---
 import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
-import PageHeader from '../../components/PageHeader.astro';
-import ProjectCard from '../../components/ProjectCard.astro';
+import ProjectsPage from '../../components/ProjectsPage.astro';
+import { projectListContent } from '../../data/pages/projects';
 
-const projects = [
-  {
-    title: 'Biometria Neonatal / TCC',
-    href: '/projects/biometria-neonatal/',
-    text: 'Research and undergraduate thesis involving machine learning, computer vision, embedded platforms and neural network inference.',
-    tags: ['TCC', 'Machine Learning', 'Raspberry Pi', 'ONNX'],
-    media: 'ai',
-    image: '/images/projects/biometria-neonatal/cover.jpg',
-  },
-  {
-    title: 'Pato a Jato',
-    href: '/projects/pato-a-jato/',
-    text: 'Telemetry, ESP32, PCB fabrication and validation for an energy efficiency student competition team.',
-    tags: ['Competition', 'Telemetry', 'PCB', 'ESP32'],
-    media: 'car',
-    image: '/images/projects/pato-a-jato/cover.jpg',
-  },
-  {
-    title: 'Robotnik',
-    href: '/projects/robotnik/',
-    text: 'Robotics outreach project with prototypes, demonstrations, LED cube, Otto robot, hexapod and ball balancing table.',
-    tags: ['Robotics', 'Outreach', 'Prototypes'],
-    media: 'robotics',
-  },
-  {
-    title: 'GeAstro',
-    href: '/projects/geastro/',
-    text: 'Projeto de astronomia e divulgação científica com atividades, observações e ações de popularização da ciência.',
-    tags: ['Astronomy', 'Outreach', 'Science'],
-    media: 'control',
-    image: '/images/projects/geastro/cover.jpg',
-  },
-];
+const content = projectListContent.pt;
 ---
-<PortfolioLayout title="Projects | Guilherme Rodrigues">
-  <PageHeader eyebrow="Portfolio" title="Projects" description="A central area for detailed project pages with text, photos, videos, architecture, results and lessons learned." />
 
-  <section class="content-section">
-    <div class="section-heading">
-      <h2>Project archive</h2>
-      <p>
-        These pages are designed to be more complete than a simple resume entry. Each one can include a story, technical context,
-        images, videos, diagrams, code links, documents, limitations, results and what I learned.
-      </p>
-    </div>
-    <div class="project-grid project-grid-2x">
-      {projects.map((project) => <ProjectCard {...project} />)}
-    </div>
-  </section>
+<PortfolioLayout title={content.meta.title} description={content.meta.description}>
+  <ProjectsPage content={content} />
 </PortfolioLayout>

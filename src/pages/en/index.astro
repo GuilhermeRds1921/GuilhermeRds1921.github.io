@@ -1,28 +1,12 @@
 ---
 import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
+import HomePage from '../../components/HomePage.astro';
+import { homeContent } from '../../data/pages/home';
+import { projectListContent } from '../../data/pages/projects';
+
+const content = homeContent.en;
 ---
 
-<PortfolioLayout
-  title="Guilherme Rodrigues | Portfolio"
-  description="Portfolio of Guilherme Rodrigues."
->
-  <section id="home" class="hero-section">
-    <div class="hero-content">
-      <h1>Guilherme Rodrigues</h1>
-
-      <p class="hero-role">
-        I'm a <span>Computer Engineering student</span>
-      </p>
-
-      <p class="hero-summary">
-        Portfolio, project archive and technical library. A place to organize projects,
-        stories, videos, photos, research notes and studies.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="/en/projects/">View projects</a>
-        <a class="btn btn-glass" href="/en/library/">Open library</a>
-      </div>
-    </div>
-  </section>
+<PortfolioLayout title={content.meta.title} description={content.meta.description}>
+  <HomePage content={content} projects={projectListContent.en.projects} />
 </PortfolioLayout>

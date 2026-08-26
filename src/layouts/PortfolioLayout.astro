@@ -122,35 +122,72 @@ const {
         }
 
         async function pageExists(url) {
-        const pathsToTry = [
-          url.pathname,
-          url.pathname.endsWith('/') ? url.pathname.slice(0, -1) : `${url.pathname}/`,
-          `${url.pathname.replace(/\/$/, '')}/index.html`,
-        ];
+          const pathsToTry = [
+            url.pathname,
+            url.pathname.endsWith('/') ? url.pathname.slice(0, -1) : `${url.pathname}/`,
+            `${url.pathname.replace(/\/$/, '')}/index.html`,
+          ];
 
-        for (const path of [...new Set(pathsToTry)]) {
-          try {
-            const response = await fetch(path + url.search, {
-              method: 'GET',
-              cache: 'no-store',
-            });
+          for (const path of [...new Set(pathsToTry)]) {
+            try {
+              const response = await fetch(path + url.search, {
+                method: 'GET',
+                cache: 'no-store',
+              });
 
-            if (response.ok) {
-              return path;
+              if (response.ok) {
+                return path;
+              }
+            } catch {
+              // tenta o próximo formato
             }
-          } catch {
-            // tenta o próximo formato
           }
+
+          return null;
         }
 
-        return null;
-      }
+        /*
+          MENU DE IDIOMAS
+        */
+        const languageToggle = document.querySelector('[data-language-menu-toggle]');
+        const languageMenu = document.querySelector('[data-language-menu]');
+
+        function setLanguageMenu(open) {
+          if (!languageToggle || !languageMenu) return;
+
+          languageMenu.hidden = !open;
+          languageToggle.setAttribute('aria-expanded', String(open));
+        }
+
+        languageToggle?.addEventListener('click', (event) => {
+          event.stopPropagation();
+          setLanguageMenu(languageMenu?.hidden ?? true);
+        });
+
+        document.addEventListener('click', (event) => {
+          if (!languageMenu || languageMenu.hidden) return;
+
+          const target = event.target;
+          if (!(target instanceof Node)) return;
+
+          if (!languageMenu.contains(target) && !languageToggle?.contains(target)) {
+            setLanguageMenu(false);
+          }
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            setLanguageMenu(false);
+          }
+        });
 
         /*
           TROCA DE IDIOMA COM VERIFICAÇÃO DE PÁGINA
         */
         document.querySelectorAll('[data-lang-link]').forEach((link) => {
           link.addEventListener('click', async (event) => {
+            setLanguageMenu(false);
+
             const href = link.getAttribute('href');
             if (!href) return;
 
