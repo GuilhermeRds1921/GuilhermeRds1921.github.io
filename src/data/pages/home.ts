@@ -13,7 +13,7 @@ export const homeContent = {
       rolePrefix: 'Estudante de',
       roleHighlight: 'Engenharia de Computação',
       summary:
-        'Portfólio, arquivo de projetos e biblioteca técnica. Um espaço para organizar protótipos, histórias, vídeos, fotos, anotações de pesquisa e tudo que venho construindo com software, hardware, IoT, inteligência artificial e Segurança da Informação.',
+        'Portfólio e arquivo de projetos. Um espaço para organizar protótipos, vídeos, fotos, anotações de pesquisa e tudo que venho construindo com software, hardware, IoT, inteligência artificial e Segurança da Informação.',
       image: projectImage('portfolioHero'),
     },
     about: {
@@ -43,7 +43,6 @@ export const homeContent = {
         ['Projetos', 'Páginas técnicas com objetivos, arquitetura, mídias, resultados e aprendizados.', '/projects/'],
         ['Galeria', 'Coleções de fotos de protótipos, eventos, laboratórios, oficinas e experimentos.', '/gallery/'],
         ['Vídeos', 'Demonstrações, apresentações, registros de projetos e explicações técnicas.', '/videos/'],
-        ['Biblioteca', 'Anotações técnicas, estudos, modelos, documentação e materiais de referência.', '/biblioteca/'],
         ['Certificações', 'Cursos, certificados, materiais da Cisco e formações complementares.', '/certifications/'],
       ],
     },
@@ -93,7 +92,7 @@ export const homeContent = {
       rolePrefix: "I'm a",
       roleHighlight: 'Computer Engineering student',
       summary:
-        'Portfolio, project archive and technical library. A place to organize prototypes, stories, videos, photos, research notes and what I have been building with software, hardware, IoT, artificial intelligence and cybersecurity.',
+        'Portfolio and project archive. A place to organize prototypes, videos, photos, research notes and what I have been building with software, hardware, IoT, artificial intelligence and cybersecurity.',
       image: projectImage('portfolioHero'),
     },
     about: {
@@ -123,7 +122,6 @@ export const homeContent = {
         ['Projects', 'Technical pages with goals, architecture, media, results and lessons learned.', '/en/projects/'],
         ['Gallery', 'Photo collections from prototypes, events, labs, workshops and experiments.', '/en/gallery/'],
         ['Videos', 'Demos, presentations, project records and technical explanations.', '/en/videos/'],
-        ['Library', 'Technical notes, studies, templates, documentation and reference material.', '/en/biblioteca/'],
         ['Certifications', 'Courses, certificates, Cisco material and complementary learning.', '/en/certifications/'],
       ],
     },
