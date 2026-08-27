@@ -3,6 +3,7 @@ import projectMedia from '../data/media/projects.json';
 export type MediaImage = {
   src?: string;
   driveFileId?: string;
+  disabled?: boolean;
   alt: string;
   caption?: string;
   fallback?: string;
@@ -23,7 +24,9 @@ export function googleDriveImageUrl(fileId: string, width = 1600): string {
 
 export function resolveMediaImage(image: MediaImage, width = 1600): ResolvedMediaImage {
   const fallback = image.fallback || projectMedia.fallback || DEFAULT_IMAGE_FALLBACK;
-  const src = image.src || (image.driveFileId ? googleDriveImageUrl(image.driveFileId, width) : fallback);
+  const src = image.disabled
+    ? fallback
+    : image.src || (image.driveFileId ? googleDriveImageUrl(image.driveFileId, width) : fallback);
 
   return {
     src,

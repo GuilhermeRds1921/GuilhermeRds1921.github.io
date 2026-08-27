@@ -1,59 +1,79 @@
 ---
 import PortfolioLayout from '../../../layouts/PortfolioLayout.astro';
+import { biometriaNeonatalPageContent as content } from '../../../data/pages/biometriaNeonatal';
 ---
-<PortfolioLayout title="Biometria Neonatal / TCC | Guilherme Rodrigues">
-  <section class="project-detail-hero project-hero-ai">
+
+<PortfolioLayout title={content.meta.title} description={content.meta.description}>
+  <section
+    class="project-detail-hero project-hero-ai project-hero-image"
+    style={`--project-hero-image: url('${content.hero.image.src}')`}
+  >
     <div>
-      <p class="eyebrow">Pesquisa · TCC</p>
-      <h1>Biometria Neonatal / TCC</h1>
-      <p>
-        Integração de aprendizado de máquina em plataformas embarcadas, com avaliação de desempenho de modelos de redes neurais
-        em dispositivos como Raspberry Pi.
-      </p>
+      <p class="eyebrow">{content.hero.category}</p>
+      <h1>{content.hero.title}</h1>
+      <p>{content.hero.description}</p>
       <div class="tag-row">
-        <span>Aprendizado de Máquina</span><span>Visão Computacional</span><span>ONNX Runtime</span><span>Raspberry Pi</span><span>Linux</span>
+        {content.hero.tags.map((tag) => <span>{tag}</span>)}
       </div>
     </div>
   </section>
 
-  <article class="content-section project-layout-grid">
-    <aside class="project-aside">
-      <strong>Tipo de projeto</strong><span>Pesquisa / TCC</span>
-      <strong>Status</strong><span>Em andamento</span>
-      <strong>Foco</strong><span>Inferência de IA embarcada</span>
-      <strong>Ferramentas principais</strong><span>Python, C++, OpenCV, ONNX Runtime, Linux</span>
-    </aside>
+  <article class="content-section robotnik-page biometria-page">
+    <section class="project-intro-grid">
+      <div class="project-body longform">
+        <p class="lead">{content.summary}</p>
 
-    <div class="project-body longform">
-      <h2>Visão geral</h2>
-      <p>
-        Este projeto faz parte da minha participação no Grupo de Biometria Neonatal da UTFPR-PB e do meu TCC em Engenharia de Computação.
-        O objetivo é estudar a viabilidade de executar modelos de aprendizado de máquina em plataformas embarcadas, reduzindo a dependência de um computador convencional.
-      </p>
+        <h2>{content.context.title}</h2>
+        {content.context.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
 
-      <h2>Problema</h2>
-      <p>
-        Em aplicações reais de biometria neonatal, desempenho e praticidade importam muito. A ideia é entender se dispositivos compactos,
-        como Raspberry Pi, conseguem executar modelos de redes neurais com desempenho suficiente para apoiar o processo de captura e análise.
-      </p>
-
-      <h2>Fotos e vídeos</h2>
-      <p>
-        Para manter as páginas dos projetos mais leves, as fotos e vídeos ficam concentrados nas áreas gerais de mídia do portfólio.
-      </p>
-      <div class="contact-card compact-actions">
-        <a class="btn btn-primary" href="/gallery/biometria-neonatal/">Ver fotos do projeto</a>
-        <a class="btn" href="/videos/biometria-neonatal/">Ver vídeos do projeto</a>
+        <h2>{content.participation.title}</h2>
+        {content.participation.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
       </div>
 
-      <h2>O que quero documentar aqui</h2>
-      <ul>
-        <li>Contexto do projeto e problema estudado.</li>
-        <li>Pipeline de inferência e ferramentas utilizadas.</li>
-        <li>Comparação entre PC e plataformas embarcadas.</li>
-        <li>Resultados, limitações e próximos passos.</li>
-        <li>Vídeos curtos explicando o funcionamento.</li>
-      </ul>
-    </div>
+      <aside class="project-aside">
+        <strong>Projeto</strong><span>Biometria Neonatal</span>
+        <strong>Instituição</strong><span>UTFPR - Campus Pato Branco</span>
+        <strong>Tipo</strong><span>Pesquisa / TCC</span>
+        <strong>Foco</strong><span>Inferência de IA em Raspberry Pi e ARM Linux</span>
+      </aside>
+    </section>
+
+    <section class="project-section">
+      <article class="contact-card development-card">
+        <h2>{content.development.title}</h2>
+        <p>{content.development.description}</p>
+      </article>
+    </section>
+
+    <section class="project-section project-two-columns">
+      <div>
+        <div class="section-heading compact-heading">
+          <h2>Tecnologias e conceitos</h2>
+        </div>
+
+        <div class="skills-cloud compact-skills">
+          {content.technologies.map((technology) => <span>{technology}</span>)}
+        </div>
+      </div>
+
+      <div class="project-body longform">
+        <h2>Aprendizados</h2>
+        <ul>
+          {content.learnings.map((learning) => <li>{learning}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-section external-links-section">
+      <div class="section-heading compact-heading">
+        <h2>Instagram</h2>
+      </div>
+
+      <div class="contact-card compact-actions">
+        {content.externalLinks.map((link) => (
+          <a class="btn btn-primary" href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+        ))}
+      </div>
+    </section>
   </article>
 </PortfolioLayout>

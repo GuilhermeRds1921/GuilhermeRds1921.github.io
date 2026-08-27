@@ -1370,6 +1370,17 @@ html[data-theme='dark'] .empty-media-note {
   min-width: min(100%, 280px);
 }
 
+.development-card {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 680px;
+}
+
+.development-card h2,
+.development-card p {
+  margin: 0;
+}
+
 .cert-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }

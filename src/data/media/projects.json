@@ -4,12 +4,14 @@
     "biometriaCover": {
       "driveFileId": "12gZJB-TwniKk35f9_UcSmwSvCQFwj36W",
       "alt": "Imagem de capa do projeto Biometria Neonatal",
-      "fallback": "/images/projects/placeholder.svg"
+      "fallback": "/images/projects/placeholder.svg",
+      "disabled": true
     },
     "patoCover": {
       "driveFileId": "1H2UgUvgxqdrGZOi-MEJ4g3DU98vSB-Fl",
       "alt": "Imagem de capa do projeto Pato a Jato",
-      "fallback": "/images/projects/placeholder.svg"
+      "fallback": "/images/projects/placeholder.svg",
+      "disabled": true
     },
     "robotnikCover": {
       "driveFileId": "13sSY-8t9n3W1nFjwr7fGsGNEqxlJeB-J",
@@ -19,7 +21,8 @@
     "geastroCover": {
       "driveFileId": "1JzLG71AbB0430xwiPhu8FwGpg8VC5_5e",
       "alt": "Imagem de capa do projeto GeAstro",
-      "fallback": "/images/projects/placeholder.svg"
+      "fallback": "/images/projects/placeholder.svg",
+      "disabled": true
     },
     "portfolioHero": {
       "driveFileId": "1rw1q8RLN54A1yZMff_6d2uDvOjD8pTVQ",

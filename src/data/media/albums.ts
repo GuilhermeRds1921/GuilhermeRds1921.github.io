@@ -7,6 +7,7 @@ export type GalleryImage = ResolvedMediaImage & {
   description?: string;
   category?: string;
   fullUrl?: string;
+  disabled?: boolean;
 };
 
 export type ProjectAlbum = {
@@ -32,12 +33,15 @@ const normalizeImage = (image: any): GalleryImage => ({
   category: image.category,
   fullUrl: image.fullUrl || image.driveUrl || image.src || image.thumbnailUrl,
   fallback: image.fallback || fallback,
+  disabled: image.disabled,
 });
 
 const uniqueImages = (images: GalleryImage[]): GalleryImage[] => {
   const seen = new Set<string>();
 
   return images.filter((image) => {
+    if (image.disabled || image.src === fallback) return false;
+
     const key = image.fullUrl || image.src;
     if (!key || seen.has(key)) return false;
 

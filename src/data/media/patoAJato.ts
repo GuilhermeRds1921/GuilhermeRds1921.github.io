@@ -1,6 +1,7 @@
 import { googleDriveImageUrl } from '../../lib/media';
 
 const driveFileUrl = (id: string) => `https://drive.google.com/file/d/${id}/view`;
+const fallback = '/images/projects/placeholder.svg';
 
 const image = (
   id: string,
@@ -9,16 +10,19 @@ const image = (
   alt: string,
   category: string,
   featured = false,
+  disabled = false,
 ) => ({
   id,
+  driveFileId: id,
   title,
   description,
   alt,
   category,
   driveUrl: driveFileUrl(id),
   fullUrl: driveFileUrl(id),
-  thumbnailUrl: googleDriveImageUrl(id, featured ? 1800 : 1000),
+  thumbnailUrl: disabled ? fallback : googleDriveImageUrl(id, featured ? 1800 : 1000),
   featured,
+  disabled,
 });
 
 const keyedImage = (
@@ -49,6 +53,7 @@ export const patoAJatoMedia = {
     'Imagem de capa do Pato a Jato no Shell Eco-marathon Brazil Challenger 2023, no Rio de Janeiro.',
     'Equipe Pato a Jato no Shell Eco-marathon Brazil Challenger 2023 no Rio de Janeiro',
     'capa',
+    true,
     true,
   ),
   cards: [
