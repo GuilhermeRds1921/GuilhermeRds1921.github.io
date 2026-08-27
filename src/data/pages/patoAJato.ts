@@ -102,7 +102,7 @@ export const patoAJatoPageContent = {
       title: 'ESP32 no conceito elétrico',
       description:
         'Apoio ao desenvolvimento eletrônico do primeiro conceito de protótipo elétrico da equipe, com uso de ESP32 para controle, leitura e comunicação.',
-      concepts: 'Placa modelada por Satil Pereira, gerente da célula de eletrônica, e fabricada por mim na CNC. ESP32, sistemas embarcados, firmware e integração hardware-software.',
+      concepts: 'Trabalho em conjunto com Satil Pereira, Luiz Kramer e equipe da eletrônica, com minha participação na fabricação em CNC. ESP32, sistemas embarcados, firmware e integração hardware-software.',
       tags: ['ESP32', 'Elétrico', 'Embarcados'],
       imageId: 'pato-esp32',
     },
@@ -110,7 +110,7 @@ export const patoAJatoPageContent = {
       title: 'Placas de circuito impresso',
       description:
         'Desenvolvimento, fabricação e validação de PCBs para organizar conexões, reduzir improvisos e deixar os sistemas eletrônicos mais confiáveis.',
-      concepts: 'Modelagem por Satil Pereira, gerente da célula de eletrônica, e fabricação por mim na CNC.',
+      concepts: 'Trabalho em conjunto com Satil Pereira, Luiz Kramer e equipe da eletrônica, com minha participação na fabricação em CNC.',
       tags: ['PCB', 'Eletrônica', 'Validação'],
       imageId: 'pato-pcb',
     },
