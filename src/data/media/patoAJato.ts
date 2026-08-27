@@ -1,7 +1,6 @@
 import { googleDriveImageUrl } from '../../lib/media';
 
 const driveFileUrl = (id: string) => `https://drive.google.com/file/d/${id}/view`;
-const placeholder = '/images/projects/placeholder.svg';
 
 const image = (
   id: string,
@@ -22,87 +21,189 @@ const image = (
   featured,
 });
 
-const pendingImage = (
-  imageName: string,
+const keyedImage = (
+  key: string,
+  driveFileId: string,
   title: string,
   description: string,
   alt: string,
   category: string,
   featured = false,
 ) => ({
-  id: imageName,
-  imageName,
+  id: key,
+  driveFileId,
   title,
   description,
   alt,
   category,
-  driveUrl: '',
-  fullUrl: '',
-  thumbnailUrl: placeholder,
+  driveUrl: driveFileUrl(driveFileId),
+  fullUrl: driveFileUrl(driveFileId),
+  thumbnailUrl: googleDriveImageUrl(driveFileId, featured ? 1800 : 1000),
   featured,
 });
 
 export const patoAJatoMedia = {
   cover: image(
     '1H2UgUvgxqdrGZOi-MEJ4g3DU98vSB-Fl',
-    'Capa do projeto Pato a Jato',
-    'Imagem de capa usada para representar o projeto Pato a Jato.',
-    'Imagem de capa do projeto Pato a Jato',
+    'Pato a Jato no Shell Eco-marathon 2023',
+    'Imagem de capa do Pato a Jato no Shell Eco-marathon Brazil Challenger 2023, no Rio de Janeiro.',
+    'Equipe Pato a Jato no Shell Eco-marathon Brazil Challenger 2023 no Rio de Janeiro',
     'capa',
     true,
   ),
   cards: [
-    pendingImage(
+    keyedImage(
       'pato-telemetria',
-      'Telemetria do protótipo a combustão',
-      'Imagem planejada para o card de telemetria do carro a combustão.',
+      '1aRcXzuFIGhJXzGJCxrfXRJuyXNAx_1qF',
+      'Sensores e telemetria',
+      'Registro de sensores e eletrônica usados nos sistemas de telemetria do projeto.',
       'Sistema de telemetria do protótipo a combustão do Pato a Jato',
       'telemetria',
       true,
     ),
-    pendingImage(
+    keyedImage(
       'pato-esp32',
-      'ESP32 no protótipo elétrico',
-      'Imagem planejada para o card de desenvolvimento com ESP32.',
-      'Desenvolvimento com ESP32 para o conceito de protótipo elétrico do Pato a Jato',
+      '1ozlPU_Ch01paivUDPhgAgh6NJbNUeuP_',
+      'Placa do conceito elétrico',
+      'Placa modelada por Satil Pereira e fabricada por mim na CNC para o conceito de protótipo elétrico.',
+      'Placa do conceito elétrico do Pato a Jato modelada por Satil Pereira e fabricada em CNC',
       'embarcados',
       true,
     ),
-    pendingImage(
+    keyedImage(
       'pato-pcb',
-      'Placas de circuito impresso',
-      'Imagem planejada para o card de PCBs do projeto.',
-      'Placa de circuito impresso desenvolvida para o Pato a Jato',
+      '1K7IfJiB8Ky25k8N7F876duA_qXL7iBqZ',
+      'Placa de circuito impresso',
+      'Placa modelada por Satil Pereira, gerente da célula de eletrônica, e fabricada por mim na CNC.',
+      'Placa de circuito impresso do Pato a Jato modelada por Satil Pereira e fabricada em CNC',
       'eletrônica',
       true,
     ),
-    pendingImage(
+    keyedImage(
       'pato-cnc',
+      '1QVbNgb6v-SdVr2zvdyRL4NW1zx0WENuI',
       'Usinagem CNC',
-      'Imagem planejada para o card de fabricação de placas em CNC.',
+      'Fabricação de placa em CNC, conectando projeto digital, furação, trilhas e acabamento.',
       'Usinagem de placa de circuito impresso em CNC para o Pato a Jato',
       'fabricação',
     ),
-    pendingImage(
+    keyedImage(
       'pato-bancada',
-      'Testes em bancada',
-      'Imagem planejada para o card de validação em bancada.',
-      'Testes de bancada de eletrônica e telemetria do Pato a Jato',
+      '1PlLtj3DWwJFCQHTyglsJzvuYuyp8jI4N',
+      'Sistema de injeção em bancada',
+      'Teste em bancada feito com o protótipo na oficina, antes dos testes de pista.',
+      'Sistema de injeção do Pato a Jato em teste de bancada na oficina',
       'testes',
     ),
-    pendingImage(
+    keyedImage(
       'pato-competicao',
-      'Competição',
-      'Imagem planejada para o card de competição.',
-      'Protótipo do Pato a Jato durante competição de eficiência energética',
+      '1zofXXCA2M74HBPkqlwAlF5BBGkXH2ytz',
+      'Shell Eco-marathon 2023',
+      'Registro da equipe no evento Shell Eco-marathon Brazil Challenger 2023, no Rio de Janeiro.',
+      'Equipe Pato a Jato durante o Shell Eco-marathon Brazil Challenger 2023',
       'competição',
     ),
   ],
   gallery: [
-    /*
-      Fotos futuras devem seguir nomes como:
-      pato-oficina, pato-telemetria, pato-pcb, pato-cnc, pato-bancada,
-      pato-competicao, pato-prototipo-combustao, pato-prototipo-eletrico.
-    */
+    image(
+      '1zofXXCA2M74HBPkqlwAlF5BBGkXH2ytz',
+      'Shell Eco-marathon 2023',
+      'Equipe Pato a Jato no Shell Eco-marathon Brazil Challenger 2023, no Rio de Janeiro.',
+      'Equipe Pato a Jato em evento de eficiência energética no Rio de Janeiro',
+      'competição',
+      true,
+    ),
+    image(
+      '1LNEJ8GbAVQQC0QS-icVLC5H-R4P1_WIk',
+      'Registro do Shell Eco-marathon 2023',
+      'Outro registro da equipe no evento Shell Eco-marathon Brazil Challenger 2023.',
+      'Outro registro da equipe Pato a Jato no Shell Eco-marathon Brazil Challenger 2023',
+      'competição',
+      true,
+    ),
+    image(
+      '1n6nRUFSBeZrA9gSRONN9Ldkp0GzIo7SX',
+      'Mural do evento',
+      'Registro da equipe no mural do evento Shell Eco-marathon.',
+      'Integrantes do Pato a Jato em frente ao mural do evento Shell Eco-marathon',
+      'competição',
+    ),
+    image(
+      '1Ij6nVBfvlN4PHk2K-mtxdosq5g5OGaYs',
+      'Circuito do protótipo a combustão',
+      'Registro da eletrônica relacionada ao protótipo a combustão.',
+      'Circuito eletrônico do protótipo a combustão do Pato a Jato',
+      'eletrônica',
+    ),
+    image(
+      '1yB8hqFB_4Wb9nB1VuBAyjVeM6SwbNz7r',
+      'Placa do protótipo a combustão',
+      'Placa de circuito impresso desenvolvida para o protótipo a combustão.',
+      'Placa de circuito impresso do protótipo a combustão do Pato a Jato',
+      'eletrônica',
+    ),
+    image(
+      '1R7v4TfttckDxhVTFkog2ea6ZSZjSO10-',
+      'Sistema de injeção',
+      'Registro do sistema de injeção e dos ajustes eletrônicos no projeto.',
+      'Sistema de injeção usado no protótipo a combustão do Pato a Jato',
+      'combustão',
+    ),
+    image(
+      '1PlLtj3DWwJFCQHTyglsJzvuYuyp8jI4N',
+      'Sistema de injeção em teste',
+      'Detalhe de testes e montagem relacionados ao sistema de injeção.',
+      'Detalhe do sistema de injeção em testes no Pato a Jato',
+      'testes',
+    ),
+    image(
+      '1aRcXzuFIGhJXzGJCxrfXRJuyXNAx_1qF',
+      'Sensor do protótipo',
+      'Sensor utilizado nos testes e sistemas embarcados do projeto.',
+      'Sensor utilizado em sistema embarcado do Pato a Jato',
+      'sensores',
+    ),
+    image(
+      '1sC1a4_olMX9-2BntRBjkK1IdYMTFOmOK',
+      'Primeira placa',
+      'Primeiras etapas de placa e validação eletrônica em bancada.',
+      'Primeira placa eletrônica desenvolvida para o Pato a Jato',
+      'bancada',
+    ),
+    image(
+      '1QVbNgb6v-SdVr2zvdyRL4NW1zx0WENuI',
+      'Usinagem CNC',
+      'Processo de fabricação de placa na CNC da universidade.',
+      'Fabricação de placa eletrônica em CNC para o Pato a Jato',
+      'fabricação',
+    ),
+    image(
+      '133ZRpIBSAkmXwx9lyi01OwyLDNhulw_K',
+      'Circuito do conceito elétrico',
+      'Registro de circuito e prototipagem ligados ao conceito de protótipo elétrico.',
+      'Circuito eletrônico para conceito de protótipo elétrico do Pato a Jato',
+      'elétrico',
+    ),
+    image(
+      '1Jo0YNqbFUAgYXLPDDmZ3bh96tFVPFMb_',
+      'Conceito urbano',
+      'Registro do conceito urbano e das ideias iniciais para o protótipo elétrico.',
+      'Conceito urbano desenvolvido pelo Pato a Jato',
+      'elétrico',
+    ),
+    image(
+      '1ozlPU_Ch01paivUDPhgAgh6NJbNUeuP_',
+      'Placa do conceito elétrico',
+      'Placa relacionada ao conceito de protótipo elétrico da equipe.',
+      'Placa eletrônica do conceito de protótipo elétrico do Pato a Jato',
+      'elétrico',
+    ),
+    image(
+      '1K7IfJiB8Ky25k8N7F876duA_qXL7iBqZ',
+      'Placa do conceito elétrico em detalhe',
+      'Detalhe de placa e conexões do conceito de protótipo elétrico.',
+      'Detalhe de placa eletrônica do conceito elétrico do Pato a Jato',
+      'elétrico',
+    ),
   ],
 };

@@ -1,14 +1,10 @@
 ---
 import PortfolioLayout from '../../../layouts/PortfolioLayout.astro';
 import ExternalImage from '../../../components/ExternalImage.astro';
-import ImageGallery from '../../../components/ImageGallery.astro';
-import VideoGallery from '../../../components/VideoGallery.astro';
 import { patoAJatoMedia } from '../../../data/media/patoAJato';
-import { patoAJatoVideos } from '../../../data/media/videos';
 import { patoAJatoPageContent as content } from '../../../data/pages/patoAJato';
 
 const imagesById = new Map(patoAJatoMedia.cards.map((image) => [image.id, image]));
-const showPatoVideosInDev = import.meta.env.DEV && patoAJatoVideos.length > 0;
 ---
 
 <PortfolioLayout title={content.meta.title} description={content.meta.description}>
@@ -62,6 +58,34 @@ const showPatoVideosInDev = import.meta.env.DEV && patoAJatoVideos.length > 0;
       </div>
     </section>
 
+    <section class="project-section project-highlight-section">
+      <div class="section-heading compact-heading">
+        {'kicker' in content.competition && content.competition.kicker && (
+          <span class="section-kicker">{content.competition.kicker}</span>
+        )}
+        <h2>{content.competition.title}</h2>
+        <p>{content.competition.description}</p>
+      </div>
+
+      <div class="project-highlight-grid">
+        {content.competition.highlights.map((item) => (
+          <article>
+            <span>{item.value}</span>
+            <p>{item.label}</p>
+          </article>
+        ))}
+      </div>
+
+      <a
+        class="inline-link"
+        href={content.competition.sourceHref}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {content.competition.sourceLabel}
+      </a>
+    </section>
+
     <section class="project-section">
       <div class="section-heading compact-heading">
         <h2>Frentes de atuação</h2>
@@ -102,37 +126,19 @@ const showPatoVideosInDev = import.meta.env.DEV && patoAJatoVideos.length > 0;
       </div>
     </section>
 
-    <section class="project-section pato-gallery">
+    <section class="project-section media-hub-callout">
       <div class="section-heading compact-heading">
-        <h2>{content.gallery.title}</h2>
-        <p>{content.gallery.description}</p>
+        <h2>Fotos e vídeos</h2>
+        <p>
+          Para manter a página do projeto mais leve, as fotos e vídeos ficam concentrados nas áreas gerais de mídia do portfólio.
+        </p>
       </div>
 
-      {patoAJatoMedia.gallery.length > 0 ? (
-        <ImageGallery
-          images={patoAJatoMedia.gallery.map((image) => ({
-            src: image.thumbnailUrl,
-            alt: image.alt,
-            caption: image.title,
-            fallback: '/images/projects/placeholder.svg',
-          }))}
-        />
-      ) : (
-        <p class="empty-media-note">{content.gallery.empty}</p>
-      )}
+      <div class="contact-card compact-actions">
+        <a class="btn btn-primary" href="/gallery/pato-a-jato/">Ver fotos do Pato a Jato</a>
+        <a class="btn" href="/videos/pato-a-jato/">Ver vídeos do Pato a Jato</a>
+      </div>
     </section>
-
-    {/* Area preparada para videos do YouTube. Mantida fora de producao enquanto nao houver embeds publicados. */}
-    {showPatoVideosInDev && (
-      <section class="project-section">
-        <div class="section-heading compact-heading">
-          <h2>Vídeos do YouTube</h2>
-          <p>Área pronta para bastidores, telemetria, exibições e registros de competição.</p>
-        </div>
-
-        <VideoGallery videos={patoAJatoVideos} />
-      </section>
-    )}
 
     <section class="project-section project-two-columns">
       <div>
