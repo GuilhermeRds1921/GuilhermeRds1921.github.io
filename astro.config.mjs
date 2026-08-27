@@ -16,7 +16,7 @@ export default defineConfig({
         {
           icon: 'linkedin',
           label: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/guilherme-rodrigues-b39a751a7/',
+          href: 'https://www.linkedin.com/in/guilherme-rodrigues-dos-santos-b39a751a7/',
         },
       ],
       sidebar: [
