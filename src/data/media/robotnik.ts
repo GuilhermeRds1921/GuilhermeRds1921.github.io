@@ -23,7 +23,7 @@ const image = (
 
 export const robotnikMedia = {
   cover: image(
-    '13sSY-8t9n3W1nFjwr7fGsGNEqxlJeB-J',
+    '1dN9DfDubFYLjyllqizi19rshCQFDVfAz',
     'Capa do projeto Robotnik',
     'Imagem de capa usada para representar a Robotnik como projeto de robótica e divulgação científica.',
     'Imagem de capa do projeto Robotnik',
@@ -32,7 +32,7 @@ export const robotnikMedia = {
   ),
   gallery: [
     image(
-      '13sSY-8t9n3W1nFjwr7fGsGNEqxlJeB-J',
+      '1dN9DfDubFYLjyllqizi19rshCQFDVfAz',
       'Robotnik',
       'Registro visual do projeto Robotnik.',
       'Registro do projeto Robotnik',

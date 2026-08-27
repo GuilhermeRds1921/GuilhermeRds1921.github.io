@@ -822,6 +822,8 @@ html[data-theme='light'] .profile-link span {
 
 .project-thumb {
   min-height: 180px;
+  display: grid;
+  place-items: center;
   background:
     radial-gradient(circle at 25% 15%, rgba(20,157,221,0.36), transparent 35%),
     linear-gradient(135deg, #040b14, #173b6c);
@@ -831,20 +833,28 @@ html[data-theme='light'] .profile-link span {
   display: block;
   width: 100%;
   height: 180px;
-  object-fit: cover;
+  object-fit: contain;
+  background: linear-gradient(180deg, #020617 0 16%, #020617 86%, #111827 100%);
 }
 
 .project-thumb[data-media='ai'] {
   background:
-    radial-gradient(circle at 20% 20%, rgba(119, 255, 214, 0.35), transparent 30%),
-    radial-gradient(circle at 80% 50%, rgba(20,157,221,0.4), transparent 35%),
-    linear-gradient(135deg, #05111f, #193b6c 65%, #0fa3b1);
+    radial-gradient(circle at 30% 30%, rgba(255, 210, 62, 0.45), transparent 28%),
+    linear-gradient(135deg, #101318, #3f2b0b 62%, #e5a300);
+}
+
+.project-thumb[data-media='ai'] img {
+  background: linear-gradient(180deg, #332404 0, #020617 16%, #020617 86%, #e5a300 86%, #e5a300 100%);
 }
 
 .project-thumb[data-media='car'] {
   background:
     radial-gradient(circle at 30% 30%, rgba(255, 210, 62, 0.45), transparent 28%),
     linear-gradient(135deg, #101318, #3f2b0b 62%, #e5a300);
+}
+
+.project-thumb[data-media='car'] img {
+  background: linear-gradient(180deg, #332404 0, #020617 16%, #020617 86%, #e5a300 86%, #e5a300 100%);
 }
 
 .project-thumb[data-media='robotics'] {
@@ -856,7 +866,11 @@ html[data-theme='light'] .profile-link span {
 .project-thumb[data-media='control'] {
   background:
     radial-gradient(circle at 50% 50%, rgba(255,255,255,0.32), transparent 18%),
-    linear-gradient(135deg, #03140c, #0c3d2e 60%, #29b473);
+    linear-gradient(135deg, #101820, #173b6c 55%, #14c4dd);
+}
+
+.project-thumb[data-media='control'] img {
+  background: linear-gradient(180deg, #0b2a4a 0, #020617 16%, #020617 86%, #149ddd 86%, #149ddd 100%);
 }
 
 .structure-grid,
@@ -2086,6 +2100,8 @@ html[data-theme='light'] .info-list strong {
 .album-cover {
   position: relative;
   min-height: 210px;
+  display: grid;
+  place-items: center;
   background: linear-gradient(135deg, #040b14, #173b6c);
 }
 
@@ -2094,7 +2110,8 @@ html[data-theme='light'] .info-list strong {
   height: 100%;
   min-height: 210px;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
+  background: #020617;
 }
 
 .album-cover::after {

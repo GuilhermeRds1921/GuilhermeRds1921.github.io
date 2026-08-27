@@ -48,12 +48,11 @@ const keyedImage = (
 
 export const patoAJatoMedia = {
   cover: image(
-    '1H2UgUvgxqdrGZOi-MEJ4g3DU98vSB-Fl',
+    '1sJCqQvT3Aki7VOn4WW7ZcbqR663sRAxO',
     'Pato a Jato no Shell Eco-marathon 2023',
     'Imagem de capa do Pato a Jato no Shell Eco-marathon Brazil Challenger 2023, no Rio de Janeiro.',
     'Equipe Pato a Jato no Shell Eco-marathon Brazil Challenger 2023 no Rio de Janeiro',
     'capa',
-    true,
     true,
   ),
   cards: [
