@@ -1,14 +1,10 @@
 ---
 import PortfolioLayout from '../../../layouts/PortfolioLayout.astro';
 import ExternalImage from '../../../components/ExternalImage.astro';
-import ImageGallery from '../../../components/ImageGallery.astro';
-import VideoGallery from '../../../components/VideoGallery.astro';
 import { robotnikMedia } from '../../../data/media/robotnik';
-import { robotnikVideos } from '../../../data/media/videos';
 import { robotnikPageContent as content } from '../../../data/pages/robotnik';
 
 const imagesById = new Map(robotnikMedia.gallery.map((image) => [image.id, image]));
-const showRobotnikVideosInDev = import.meta.env.DEV && robotnikVideos.length > 0;
 ---
 
 <PortfolioLayout title={content.meta.title} description={content.meta.description}>
@@ -118,33 +114,19 @@ const showRobotnikVideosInDev = import.meta.env.DEV && robotnikVideos.length > 0
       </div>
     </section>
 
-    <section class="project-section robotnik-gallery">
+    <section class="project-section media-hub-callout">
       <div class="section-heading compact-heading">
-        <h2>Galeria de imagens</h2>
-        <p>Imagens externas carregadas por miniaturas públicas do Google Drive.</p>
+        <h2>Fotos e vídeos</h2>
+        <p>
+          Para manter as páginas dos projetos mais leves, as fotos e vídeos ficam concentrados nas áreas gerais de mídia do portfólio.
+        </p>
       </div>
 
-      <ImageGallery
-        images={robotnikMedia.gallery.map((image) => ({
-          src: image.thumbnailUrl,
-          alt: image.alt,
-          caption: image.title,
-          fallback: '/images/projects/placeholder.svg',
-        }))}
-      />
+      <div class="contact-card compact-actions">
+        <a class="btn btn-primary" href="/gallery/robotnik/">Ver fotos do Robotnik</a>
+        <a class="btn" href="/videos/robotnik/">Ver vídeos do Robotnik</a>
+      </div>
     </section>
-
-    {/* Area preparada para videos do YouTube. Mantida fora de producao enquanto nao houver embeds publicados. */}
-    {showRobotnikVideosInDev && (
-      <section class="project-section">
-        <div class="section-heading compact-heading">
-          <h2>Vídeos do YouTube</h2>
-          <p>Área pronta para demonstrações, apresentações e registros do projeto.</p>
-        </div>
-
-        <VideoGallery videos={robotnikVideos} />
-      </section>
-    )}
 
     <section class="project-section project-two-columns">
       <div>

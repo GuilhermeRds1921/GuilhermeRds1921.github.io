@@ -1,13 +1,42 @@
 ---
 import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
 import PageHeader from '../../components/PageHeader.astro';
-import VideoGallery from '../../components/VideoGallery.astro';
-import videosMedia from '../../data/media/videos.json';
+import { projectVideoAlbums } from '../../data/media/videoAlbums';
 ---
+
 <PortfolioLayout title="Vídeos | Guilherme Rodrigues">
-  <PageHeader eyebrow="Demonstrações" title="Vídeos" description="Um espaço central para vídeos explicativos, demonstrações de projetos, registros de apresentações e explicações técnicas." />
+  <PageHeader
+    eyebrow="Demonstrações"
+    title="Vídeos"
+    description="Os vídeos ficam concentrados aqui, organizados por projeto. Clique em um card para abrir os vídeos daquele projeto."
+  />
 
   <section class="content-section">
-    <VideoGallery videos={videosMedia.videos} />
+    <div class="album-grid video-album-grid">
+      {projectVideoAlbums.map((album) => {
+        const availableVideos = album.videos.filter((video) => video.youtubeId || video.youtubeUrl).length;
+
+        return (
+          <a class="album-card video-album-card" href={`/videos/${album.slug}/`}>
+            <div class="video-album-cover">
+              <span>▶</span>
+              <small>
+                {availableVideos > 0
+                  ? `${availableVideos} ${availableVideos === 1 ? 'vídeo' : 'vídeos'}`
+                  : 'em preparação'}
+              </small>
+            </div>
+
+            <div class="album-card-content">
+              <strong>{album.title}</strong>
+              <p>{album.caption}</p>
+              <div class="tag-row">
+                {album.tags.map((tag) => <span>{tag}</span>)}
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
   </section>
 </PortfolioLayout>

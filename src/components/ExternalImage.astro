@@ -15,14 +15,17 @@ const {
 };
 
 const resolved = 'src' in image && image.src ? image as ResolvedMediaImage : resolveMediaImage(image as MediaImage);
+const classes = ['reveal-image', className].filter(Boolean).join(' ');
 ---
 
 <img
   src={resolved.src}
   alt={resolved.alt}
-  class={className}
+  class={classes}
   loading={loading}
   decoding={decoding}
   data-fallback-src={resolved.fallback}
-  onerror="if (this.dataset.fallbackSrc && this.src !== this.dataset.fallbackSrc) this.src = this.dataset.fallbackSrc;"
+  data-loaded="false"
+  onload="this.dataset.loaded = 'true';"
+  onerror="if (this.dataset.fallbackSrc && this.src !== this.dataset.fallbackSrc) { this.dataset.loaded = 'false'; this.src = this.dataset.fallbackSrc; } else { this.dataset.loaded = 'true'; }"
 />

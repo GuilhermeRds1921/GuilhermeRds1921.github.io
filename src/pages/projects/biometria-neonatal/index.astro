@@ -1,10 +1,5 @@
 ---
 import PortfolioLayout from '../../../layouts/PortfolioLayout.astro';
-import VideoEmbed from '../../../components/VideoEmbed.astro';
-import ImageGallery from '../../../components/ImageGallery.astro';
-import { projectGallery } from '../../../lib/media';
-
-const gallery = projectGallery('biometriaNeonatal');
 ---
 <PortfolioLayout title="Biometria Neonatal / TCC | Guilherme Rodrigues">
   <section class="project-detail-hero project-hero-ai">
@@ -42,14 +37,14 @@ const gallery = projectGallery('biometriaNeonatal');
         como Raspberry Pi, conseguem executar modelos de redes neurais com desempenho suficiente para apoiar o processo de captura e análise.
       </p>
 
-      <h2>Área de mídia</h2>
+      <h2>Fotos e vídeos</h2>
       <p>
-        Esta seção fica reservada para vídeos explicativos, demonstrações do sistema, telas de execução, resultados e apresentações do TCC.
+        Para manter as páginas dos projetos mais leves, as fotos e vídeos ficam concentrados nas áreas gerais de mídia do portfólio.
       </p>
-      <VideoEmbed title="Vídeo explicativo do projeto" caption="Substitua este bloco por um link do YouTube ou vídeo incorporado." />
-
-      <h2>Galeria de imagens</h2>
-      <ImageGallery images={gallery} />
+      <div class="contact-card compact-actions">
+        <a class="btn btn-primary" href="/gallery/biometria-neonatal/">Ver fotos do projeto</a>
+        <a class="btn" href="/videos/biometria-neonatal/">Ver vídeos do projeto</a>
+      </div>
 
       <h2>O que quero documentar aqui</h2>
       <ul>

@@ -1,0 +1,38 @@
+---
+import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import VideoGallery from '../../components/VideoGallery.astro';
+import { projectVideoAlbums, getProjectVideoAlbum } from '../../data/media/videoAlbums';
+
+export function getStaticPaths() {
+  return projectVideoAlbums.map((album) => ({ params: { slug: album.slug } }));
+}
+
+const { slug } = Astro.params;
+const album = getProjectVideoAlbum(slug ?? '') ?? projectVideoAlbums[0];
+const availableVideos = album.videos.filter((video) => video.youtubeId || video.youtubeUrl);
+---
+
+<PortfolioLayout title={`${album.title} | Vídeos | Guilherme Rodrigues`}>
+  <PageHeader
+    eyebrow="Vídeos do projeto"
+    title={album.title}
+    description={album.description}
+  />
+
+  <section class="content-section media-detail-section">
+    <div class="media-actions">
+      <a class="btn btn-primary" href={album.projectHref}>Ver página do projeto</a>
+      <a class="btn" href={album.galleryHref}>Ver fotos</a>
+      <a class="btn" href="/videos/">Voltar para vídeos</a>
+    </div>
+
+    {availableVideos.length > 0 ? (
+      <VideoGallery videos={availableVideos} />
+    ) : (
+      <p class="empty-media-note">
+        Esta área está pronta para receber vídeos do YouTube. Os vídeos serão adicionados conforme forem publicados e organizados.
+      </p>
+    )}
+  </section>
+</PortfolioLayout>

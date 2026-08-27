@@ -2,20 +2,37 @@
 import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import ExternalImage from '../../components/ExternalImage.astro';
-import galleryMedia from '../../data/media/gallery.json';
-
-const albums = galleryMedia.albums;
+import { projectAlbums } from '../../data/media/albums';
 ---
+
 <PortfolioLayout title="Galeria | Guilherme Rodrigues">
-  <PageHeader eyebrow="Arquivo de mídia" title="Galeria" description="Um espaço dedicado para imagens de projetos, protótipos, eventos, laboratórios, PCBs, robôs, competições e bastidores." />
+  <PageHeader
+    eyebrow="Arquivo de mídia"
+    title="Galeria"
+    description="As fotos ficam concentradas aqui, organizadas por projeto. Clique em um card para abrir o álbum completo daquele projeto."
+  />
 
   <section class="content-section">
-    <div class="gallery-grid">
-      {albums.map((album) => (
-        <figure>
-          <ExternalImage image={album.image} />
-          <figcaption><strong>{album.title}</strong><span>{album.caption}</span></figcaption>
-        </figure>
+    <div class="album-grid">
+      {projectAlbums.map((album) => (
+        <a class="album-card" href={`/gallery/${album.slug}/`}>
+          <div class="album-cover">
+            <ExternalImage image={album.cover} />
+            <span>
+              {album.images.length > 0
+                ? `${album.images.length} ${album.images.length === 1 ? 'foto' : 'fotos'}`
+                : 'em preparação'}
+            </span>
+          </div>
+
+          <div class="album-card-content">
+            <strong>{album.title}</strong>
+            <p>{album.caption}</p>
+            <div class="tag-row">
+              {album.tags.map((tag) => <span>{tag}</span>)}
+            </div>
+          </div>
+        </a>
       ))}
     </div>
   </section>

@@ -1,0 +1,48 @@
+---
+import PortfolioLayout from '../../layouts/PortfolioLayout.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import ExternalImage from '../../components/ExternalImage.astro';
+import { projectAlbums, getProjectAlbum } from '../../data/media/albums';
+
+export function getStaticPaths() {
+  return projectAlbums.map((album) => ({ params: { slug: album.slug } }));
+}
+
+const { slug } = Astro.params;
+const album = getProjectAlbum(slug ?? '') ?? projectAlbums[0];
+---
+
+<PortfolioLayout title={`${album.title} | Galeria | Guilherme Rodrigues`}>
+  <PageHeader
+    eyebrow="Galeria do projeto"
+    title={album.title}
+    description={album.description}
+  />
+
+  <section class="content-section media-detail-section">
+    <div class="media-actions">
+      <a class="btn btn-primary" href={album.projectHref}>Ver página do projeto</a>
+      <a class="btn" href={album.videoHref}>Ver vídeos</a>
+      <a class="btn" href="/gallery/">Voltar para a galeria</a>
+    </div>
+
+    {album.images.length > 0 ? (
+      <div class="gallery-detail-grid">
+        {album.images.map((image) => (
+          <a class="gallery-detail-card" href={image.fullUrl || image.src} target="_blank" rel="noreferrer">
+            <ExternalImage image={image} />
+            <div>
+              <strong>{image.title || image.caption || 'Imagem do projeto'}</strong>
+              {image.description && <span>{image.description}</span>}
+              {image.category && <small>{image.category}</small>}
+            </div>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <p class="empty-media-note">
+        Este álbum ainda está preparado para receber imagens. As fotos serão adicionadas por links externos conforme forem organizadas.
+      </p>
+    )}
+  </section>
+</PortfolioLayout>

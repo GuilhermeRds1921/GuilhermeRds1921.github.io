@@ -1,9 +1,5 @@
 ---
 import PortfolioLayout from '../../../layouts/PortfolioLayout.astro';
-import ExternalImage from '../../../components/ExternalImage.astro';
-import { projectImage } from '../../../lib/media';
-
-const cover = projectImage('geastroCover');
 ---
 <PortfolioLayout title="GeAstro | Guilherme Rodrigues">
   <section class="project-detail-hero project-hero-control">
@@ -31,11 +27,13 @@ const cover = projectImage('geastroCover');
         conectando universidade, tecnologia e comunidade em experiências práticas de aprendizagem.
       </p>
 
-      <div class="image-grid">
-        <figure class="image-card">
-          <ExternalImage image={cover} />
-          <figcaption>GeAstro</figcaption>
-        </figure>
+      <h2>Fotos e vídeos</h2>
+      <p>
+        As fotos e vídeos do GeAstro ficam concentrados nas áreas gerais de mídia do portfólio.
+      </p>
+      <div class="contact-card compact-actions">
+        <a class="btn btn-primary" href="/gallery/geastro/">Ver fotos do GeAstro</a>
+        <a class="btn" href="/videos/geastro/">Ver vídeos do GeAstro</a>
       </div>
     </div>
   </article>
