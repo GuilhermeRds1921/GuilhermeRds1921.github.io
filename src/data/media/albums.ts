@@ -82,10 +82,10 @@ const robotnikImages: GalleryImage[] = [
 
 const ballBalancingImages: GalleryImage[] = [
   normalizeImage({
-    src: 'https://drive.google.com/thumbnail?id=1tW71B8dqGgVHH5Q0k9JiaXqu7IvTMczC&sz=w1600',
-    fullUrl: driveFileUrl('1tW71B8dqGgVHH5Q0k9JiaXqu7IvTMczC'),
+    src: 'https://drive.google.com/thumbnail?id=1OddH92YaNibzISue65ngqyKwl6OlHkpc&sz=w1600',
+    fullUrl: driveFileUrl('1OddH92YaNibzISue65ngqyKwl6OlHkpc'),
     title: 'Mesa de equilíbrio de bola',
-    description: 'Registro da mesa robótica de equilíbrio de bola usada em testes e demonstrações.',
+    description: 'Imagem de capa da mesa robótica de equilíbrio de bola.',
     alt: 'Mesa robótica de equilíbrio de bola',
     category: 'controle',
   }),
