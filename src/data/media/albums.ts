@@ -10,6 +10,16 @@ export type GalleryImage = ResolvedMediaImage & {
   disabled?: boolean;
 };
 
+export type GalleryVideo = {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  driveFileId: string;
+  driveUrl: string;
+  embedUrl: string;
+};
+
 export type ProjectAlbum = {
   slug: string;
   title: string;
@@ -19,10 +29,13 @@ export type ProjectAlbum = {
   videoHref: string;
   cover: GalleryImage;
   images: GalleryImage[];
+  videos?: GalleryVideo[];
   tags: string[];
 };
 
 const fallback = '/images/projects/placeholder.svg';
+const driveFileUrl = (id: string) => `https://drive.google.com/file/d/${id}/view`;
+const drivePreviewUrl = (id: string) => `https://drive.google.com/file/d/${id}/preview`;
 
 const normalizeImage = (image: any): GalleryImage => ({
   src: image.thumbnailUrl || image.src || fallback,
@@ -65,6 +78,56 @@ const patoImages: GalleryImage[] = [
 const robotnikImages: GalleryImage[] = [
   normalizeImage(robotnikMedia.cover),
   ...robotnikMedia.gallery.map((image) => normalizeImage(image)),
+];
+
+const ballBalancingImages: GalleryImage[] = [
+  normalizeImage({
+    src: 'https://drive.google.com/thumbnail?id=1tW71B8dqGgVHH5Q0k9JiaXqu7IvTMczC&sz=w1600',
+    fullUrl: driveFileUrl('1tW71B8dqGgVHH5Q0k9JiaXqu7IvTMczC'),
+    title: 'Mesa de equilíbrio de bola',
+    description: 'Registro da mesa robótica de equilíbrio de bola usada em testes e demonstrações.',
+    alt: 'Mesa robótica de equilíbrio de bola',
+    category: 'controle',
+  }),
+];
+
+const ballBalancingVideos: GalleryVideo[] = [
+  {
+    id: 'robotnik-mesa-equilibrio-00',
+    title: 'Mesa de equilíbrio de bola - vídeo 1',
+    description: 'Registro em vídeo da mesa robótica de equilíbrio de bola.',
+    category: 'demonstração',
+    driveFileId: '1qk1LnI7Id4bqUY_BoICqiofEznGMaN1G',
+    driveUrl: driveFileUrl('1qk1LnI7Id4bqUY_BoICqiofEznGMaN1G'),
+    embedUrl: drivePreviewUrl('1qk1LnI7Id4bqUY_BoICqiofEznGMaN1G'),
+  },
+  {
+    id: 'robotnik-mesa-equilibrio-01',
+    title: 'Mesa de equilíbrio de bola - vídeo 2',
+    description: 'Registro em vídeo da mesa robótica de equilíbrio de bola.',
+    category: 'demonstração',
+    driveFileId: '1ECioEwHrzEOC-kausjCz8pIl78LjZaHL',
+    driveUrl: driveFileUrl('1ECioEwHrzEOC-kausjCz8pIl78LjZaHL'),
+    embedUrl: drivePreviewUrl('1ECioEwHrzEOC-kausjCz8pIl78LjZaHL'),
+  },
+  {
+    id: 'robotnik-mesa-equilibrio-02',
+    title: 'Mesa de equilíbrio de bola - vídeo 3',
+    description: 'Registro em vídeo da mesa robótica de equilíbrio de bola.',
+    category: 'demonstração',
+    driveFileId: '1-Sa9nHhCQLuUmVhI1PI7WK93E7yor617',
+    driveUrl: driveFileUrl('1-Sa9nHhCQLuUmVhI1PI7WK93E7yor617'),
+    embedUrl: drivePreviewUrl('1-Sa9nHhCQLuUmVhI1PI7WK93E7yor617'),
+  },
+  {
+    id: 'robotnik-mesa-equilibrio-03',
+    title: 'Mesa de equilíbrio de bola - vídeo 4',
+    description: 'Registro em vídeo da mesa robótica de equilíbrio de bola.',
+    category: 'demonstração',
+    driveFileId: '15J7sVmeQ97myM-_31V1Z1y11SRLF1ge2',
+    driveUrl: driveFileUrl('15J7sVmeQ97myM-_31V1Z1y11SRLF1ge2'),
+    embedUrl: drivePreviewUrl('15J7sVmeQ97myM-_31V1Z1y11SRLF1ge2'),
+  },
 ];
 
 const geastroImages: GalleryImage[] = [
@@ -128,12 +191,9 @@ export const projectAlbums: ProjectAlbum[] = [
       'Álbum preparado para receber imagens da mesa robótica de equilíbrio de bola, arquitetura, testes, interface e demonstrações.',
     projectHref: '/projects/ball-balancing-robot/',
     videoHref: '/videos/ball-balancing-robot/',
-    cover: normalizeImage({
-      src: fallback,
-      title: 'Ball Balancing Robot',
-      alt: 'Imagem de placeholder do projeto Ball Balancing Robot',
-    }),
-    images: [],
+    cover: ballBalancingImages[0],
+    images: uniqueImages(ballBalancingImages),
+    videos: ballBalancingVideos,
     tags: ['Controle', 'OpenCV', 'Raspberry Pi'],
   },
 ];
