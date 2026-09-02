@@ -1,21 +1,23 @@
-# Guilherme Rodrigues — Portfolio Starter
+# Guilherme Rodrigues — Portfólio
 
-Portfólio pessoal em **Astro**, preparado para GitHub Pages.
+Portfólio pessoal de **Guilherme Rodrigues**, estudante de **Engenharia de Computação na UTFPR – Campus Pato Branco**, com foco em projetos de tecnologia aplicada, sistemas embarcados, IoT, inteligência artificial, visão computacional, automação, telemetria, eletrônica e Segurança da Informação.
 
-## Rodar localmente
+O site funciona como um **hub público** para organizar minha trajetória acadêmica, projetos, histórias, documentação técnica, galerias, vídeos, certificações e materiais relacionados ao meu desenvolvimento profissional.
 
-```bash
-npm install
-npm run dev
-```
+<p>
+  <a href="https://guilhermerds1921.github.io/">
+    <img src="https://img.shields.io/badge/Acessar%20portf%C3%B3lio-00AEEF?style=for-the-badge&logo=githubpages&logoColor=white" alt="Acessar portfólio" />
+  </a>
+  <a href="https://github.com/GuilhermeRds1921/GuilhermeRds1921.github.io">
+    <img src="https://img.shields.io/badge/Reposit%C3%B3rio-GitHub-111111?style=for-the-badge&logo=github&logoColor=white" alt="Repositório no GitHub" />
+  </a>
+</p>
 
-## Estrutura
+---
 
-- `src/pages/index.astro`: página inicial estilo acadêmico/profissional.
-- `src/components/`: componentes para galerias, vídeos, histórias e tecnologias.
-- `public/images/`: imagens públicas do portfólio.
-- `.github/workflows/deploy.yml`: deploy no GitHub Pages.
+## 🌐 Site publicado
 
-## Ideia visual
+O portfólio está disponível em:
 
-A home segue uma linha acadêmica/profissional: hero com nome, navegação por seções, About, Facts, Resume, Projects, Skills, Gallery, Videos, Certifications e Contact.
+```txt
+https://guilhermerds1921.github.io/
