@@ -31,25 +31,6 @@ const timeline = [
   },
 ];
 
-const highlights = [
-  {
-    value: 'UTFPR-PB',
-    label: 'Grupo sediado no Campus Pato Branco da Universidade Tecnológica Federal do Paraná.',
-  },
-  {
-    value: '2010',
-    label: 'Ano de fundação do GEAstro como grupo de estudos, pesquisa, extensão e inovação.',
-  },
-  {
-    value: '9',
-    label: 'Projetos em desenvolvimento citados pela página institucional Quem somos.',
-  },
-  {
-    value: 'Comunidade',
-    label: 'Atuação aberta a públicos internos e externos à UTFPR.',
-  },
-];
-
 const activities = [
   {
     title: 'Observações astronômicas',
@@ -205,25 +186,6 @@ const externalLinks = [
             <span>{item.period}</span>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
-          </article>
-        ))}
-      </div>
-    </section>
-
-    <section class="project-section">
-      <div class="section-heading compact-heading">
-        <h2>Presença e alcance</h2>
-        <p>
-          Alguns pontos institucionais ajudam a situar o GEAstro dentro da
-          UTFPR-PB e da comunidade regional.
-        </p>
-      </div>
-
-      <div class="project-highlight-grid">
-        {highlights.map((highlight) => (
-          <article>
-            <span>{highlight.value}</span>
-            <p>{highlight.label}</p>
           </article>
         ))}
       </div>
