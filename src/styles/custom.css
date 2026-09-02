@@ -1388,6 +1388,56 @@ html[data-theme='dark'] .empty-media-note {
   min-width: min(100%, 280px);
 }
 
+.researchgate-card {
+  display: inline-grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  width: min(100%, 360px);
+  margin-bottom: 0.85rem;
+  padding: 0.85rem 1rem;
+  text-decoration: none;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.researchgate-card:hover,
+.researchgate-card:focus-visible {
+  border-color: rgba(0, 204, 187, 0.5);
+  box-shadow: 0 14px 38px rgba(0, 204, 187, 0.16);
+  transform: translateY(-2px);
+}
+
+.researchgate-card strong,
+.researchgate-card small {
+  display: block;
+  margin: 0;
+}
+
+.researchgate-card strong {
+  color: var(--heading);
+  font-size: 0.98rem;
+  line-height: 1.25;
+}
+
+.researchgate-card small {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+
+.researchgate-icon {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.45rem;
+  background: #00ccbb;
+  color: #021f1c;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
 .development-card {
   display: grid;
   gap: 0.65rem;

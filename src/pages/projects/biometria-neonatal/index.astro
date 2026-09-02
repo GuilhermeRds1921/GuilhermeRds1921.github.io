@@ -39,6 +39,21 @@ import { biometriaNeonatalPageContent as content } from '../../../data/pages/bio
     </section>
 
     <section class="project-section">
+      <a
+        class="contact-card researchgate-card"
+        href="https://www.researchgate.net/profile/Guilherme-Rodrigues-65"
+        target="_blank"
+        rel="noopener noreferrer"
+        referrerpolicy="no-referrer"
+        aria-label="Abrir perfil acadêmico no ResearchGate"
+      >
+        <span class="researchgate-icon" aria-hidden="true">RG</span>
+        <span>
+          <strong>ResearchGate</strong>
+          <small>Perfil acadêmico</small>
+        </span>
+      </a>
+
       <article class="contact-card development-card">
         <h2>{content.development.title}</h2>
         <p>{content.development.description}</p>
@@ -66,22 +81,13 @@ import { biometriaNeonatalPageContent as content } from '../../../data/pages/bio
 
     <section class="project-section external-links-section">
       <div class="section-heading compact-heading">
-        <h2>Links acadêmicos</h2>
+        <h2>Instagram</h2>
       </div>
 
       <div class="contact-card compact-actions">
         {content.externalLinks.map((link) => (
           <a class="btn btn-primary" href={link.href} target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">{link.label}</a>
         ))}
-        <a
-          class="btn"
-          href="https://www.researchgate.net/profile/Guilherme-Rodrigues-65"
-          target="_blank"
-          rel="noopener noreferrer"
-          referrerpolicy="no-referrer"
-        >
-          ResearchGate
-        </a>
       </div>
     </section>
   </article>
