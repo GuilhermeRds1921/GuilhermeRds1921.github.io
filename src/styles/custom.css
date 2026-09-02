@@ -1874,11 +1874,11 @@ main,
 html[data-theme='dark'] .project-body.longform,
 html[data-theme='dark'] .project-body.longform p,
 html[data-theme='dark'] .project-body.longform li {
-  color: #d6e2ee;
+  color: #b8c4d2;
 }
 
 html[data-theme='dark'] .project-body.longform .lead {
-  color: #f1f7fb;
+  color: #cbd7e2;
 }
 
 /* ================================
