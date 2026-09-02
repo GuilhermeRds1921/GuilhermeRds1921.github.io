@@ -1,6 +1,4 @@
-import { googleDriveImageUrl } from '../../lib/media';
-
-const driveFileUrl = (id: string) => `https://drive.google.com/file/d/${id}/view`;
+import { googleDriveFileUrl, googleDriveImageUrl } from '../../lib/media';
 
 const image = (
   id: string,
@@ -15,8 +13,8 @@ const image = (
   description,
   alt,
   category,
-  driveUrl: driveFileUrl(id),
-  fullUrl: driveFileUrl(id),
+  driveUrl: googleDriveFileUrl(id),
+  fullUrl: googleDriveFileUrl(id),
   thumbnailUrl: googleDriveImageUrl(id, featured ? 1800 : 1000),
   featured,
 });

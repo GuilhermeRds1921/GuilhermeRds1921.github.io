@@ -3,25 +3,21 @@
   "images": {
     "biometriaCover": {
       "driveFileId": "1rsHvb9ZtaFH0_39IsmT9cIh1iHbAZB6U",
-      "previousDriveFileId": "12gZJB-TwniKk35f9_UcSmwSvCQFwj36W",
       "alt": "Imagem de capa do projeto Biometria Neonatal",
       "fallback": "/images/projects/placeholder.svg"
     },
     "patoCover": {
       "driveFileId": "1sJCqQvT3Aki7VOn4WW7ZcbqR663sRAxO",
-      "previousDriveFileId": "1H2UgUvgxqdrGZOi-MEJ4g3DU98vSB-Fl",
       "alt": "Imagem de capa do projeto Pato a Jato",
       "fallback": "/images/projects/placeholder.svg"
     },
     "robotnikCover": {
       "driveFileId": "1dN9DfDubFYLjyllqizi19rshCQFDVfAz",
-      "previousDriveFileId": "13sSY-8t9n3W1nFjwr7fGsGNEqxlJeB-J",
       "alt": "Imagem de capa do projeto Robotnik",
       "fallback": "/images/projects/placeholder.svg"
     },
     "geastroCover": {
       "driveFileId": "1CcMouAY7kb4mP-rLtPuvSMvb6CCIOT5o",
-      "previousDriveFileId": "1JzLG71AbB0430xwiPhu8FwGpg8VC5_5e",
       "alt": "Imagem de capa do projeto GeAstro",
       "fallback": "/images/projects/placeholder.svg"
     },

@@ -31,7 +31,7 @@ const album = getProjectAlbum(slug ?? '') ?? projectAlbums[0];
         {album.images.length > 0 && (
           <div class="gallery-detail-grid">
             {album.images.map((image) => (
-              <a class="gallery-detail-card" href={image.fullUrl || image.src} target="_blank" rel="noreferrer">
+              <a class="gallery-detail-card" href={image.fullUrl || image.src} target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
                 <ExternalImage image={image} />
                 <div>
                   <strong>{image.title || image.caption || 'Imagem do projeto'}</strong>
@@ -51,14 +51,15 @@ const album = getProjectAlbum(slug ?? '') ?? projectAlbums[0];
                   src={video.embedUrl}
                   title={video.title}
                   loading="lazy"
-                  allow="autoplay; encrypted-media; picture-in-picture"
+                  allow="encrypted-media; picture-in-picture"
+                  referrerpolicy="no-referrer"
                   allowfullscreen
                 ></iframe>
                 <div>
                   <strong>{video.title}</strong>
                   <span>{video.description}</span>
                   <small>{video.category}</small>
-                  <a href={video.driveUrl} target="_blank" rel="noreferrer">Abrir no Drive</a>
+                  <a href={video.driveUrl} target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">Abrir no Drive</a>
                 </div>
               </article>
             ))}

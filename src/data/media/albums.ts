@@ -1,4 +1,13 @@
-import { projectGallery, projectImage, type ResolvedMediaImage } from '../../lib/media';
+import {
+  googleDriveFileUrl,
+  googleDriveImageUrl,
+  googleDrivePreviewUrl,
+  projectGallery,
+  projectImage,
+  sanitizeExternalUrl,
+  sanitizeImageUrl,
+  type ResolvedMediaImage,
+} from '../../lib/media';
 import { patoAJatoMedia } from './patoAJato';
 import { robotnikMedia } from './robotnik';
 
@@ -34,20 +43,21 @@ export type ProjectAlbum = {
 };
 
 const fallback = '/images/projects/placeholder.svg';
-const driveFileUrl = (id: string) => `https://drive.google.com/file/d/${id}/view`;
-const drivePreviewUrl = (id: string) => `https://drive.google.com/file/d/${id}/preview`;
+const normalizeImage = (image: any): GalleryImage => {
+  const src = sanitizeImageUrl(image.thumbnailUrl || image.src, image.fallback || fallback);
 
-const normalizeImage = (image: any): GalleryImage => ({
-  src: image.thumbnailUrl || image.src || fallback,
-  alt: image.alt || image.title || image.caption || 'Imagem do projeto',
-  caption: image.title || image.caption || image.description,
-  title: image.title || image.caption,
-  description: image.description || image.caption,
-  category: image.category,
-  fullUrl: image.fullUrl || image.driveUrl || image.src || image.thumbnailUrl,
-  fallback: image.fallback || fallback,
-  disabled: image.disabled,
-});
+  return {
+    src,
+    alt: image.alt || image.title || image.caption || 'Imagem do projeto',
+    caption: image.title || image.caption || image.description,
+    title: image.title || image.caption,
+    description: image.description || image.caption,
+    category: image.category,
+    fullUrl: sanitizeExternalUrl(image.fullUrl || image.driveUrl || image.src || image.thumbnailUrl, src),
+    fallback: image.fallback || fallback,
+    disabled: image.disabled,
+  };
+};
 
 const uniqueImages = (images: GalleryImage[]): GalleryImage[] => {
   const seen = new Set<string>();
@@ -82,8 +92,8 @@ const robotnikImages: GalleryImage[] = [
 
 const ballBalancingImages: GalleryImage[] = [
   normalizeImage({
-    src: 'https://drive.google.com/thumbnail?id=1OddH92YaNibzISue65ngqyKwl6OlHkpc&sz=w1600',
-    fullUrl: driveFileUrl('1OddH92YaNibzISue65ngqyKwl6OlHkpc'),
+    src: googleDriveImageUrl('1OddH92YaNibzISue65ngqyKwl6OlHkpc', 1600),
+    fullUrl: googleDriveFileUrl('1OddH92YaNibzISue65ngqyKwl6OlHkpc'),
     title: 'Mesa de equilíbrio de bola',
     description: 'Imagem de capa da mesa robótica de equilíbrio de bola.',
     alt: 'Mesa robótica de equilíbrio de bola',
@@ -98,8 +108,8 @@ const ballBalancingVideos: GalleryVideo[] = [
     description: 'Registro em vídeo da mesa robótica de equilíbrio de bola.',
     category: 'demonstração',
     driveFileId: '1qk1LnI7Id4bqUY_BoICqiofEznGMaN1G',
-    driveUrl: driveFileUrl('1qk1LnI7Id4bqUY_BoICqiofEznGMaN1G'),
-    embedUrl: drivePreviewUrl('1qk1LnI7Id4bqUY_BoICqiofEznGMaN1G'),
+    driveUrl: googleDriveFileUrl('1qk1LnI7Id4bqUY_BoICqiofEznGMaN1G'),
+    embedUrl: googleDrivePreviewUrl('1qk1LnI7Id4bqUY_BoICqiofEznGMaN1G'),
   },
   {
     id: 'robotnik-mesa-equilibrio-01',
@@ -107,8 +117,8 @@ const ballBalancingVideos: GalleryVideo[] = [
     description: 'Registro em vídeo da mesa robótica de equilíbrio de bola.',
     category: 'demonstração',
     driveFileId: '1ECioEwHrzEOC-kausjCz8pIl78LjZaHL',
-    driveUrl: driveFileUrl('1ECioEwHrzEOC-kausjCz8pIl78LjZaHL'),
-    embedUrl: drivePreviewUrl('1ECioEwHrzEOC-kausjCz8pIl78LjZaHL'),
+    driveUrl: googleDriveFileUrl('1ECioEwHrzEOC-kausjCz8pIl78LjZaHL'),
+    embedUrl: googleDrivePreviewUrl('1ECioEwHrzEOC-kausjCz8pIl78LjZaHL'),
   },
   {
     id: 'robotnik-mesa-equilibrio-02',
@@ -116,8 +126,8 @@ const ballBalancingVideos: GalleryVideo[] = [
     description: 'Registro em vídeo da mesa robótica de equilíbrio de bola.',
     category: 'demonstração',
     driveFileId: '1-Sa9nHhCQLuUmVhI1PI7WK93E7yor617',
-    driveUrl: driveFileUrl('1-Sa9nHhCQLuUmVhI1PI7WK93E7yor617'),
-    embedUrl: drivePreviewUrl('1-Sa9nHhCQLuUmVhI1PI7WK93E7yor617'),
+    driveUrl: googleDriveFileUrl('1-Sa9nHhCQLuUmVhI1PI7WK93E7yor617'),
+    embedUrl: googleDrivePreviewUrl('1-Sa9nHhCQLuUmVhI1PI7WK93E7yor617'),
   },
   {
     id: 'robotnik-mesa-equilibrio-03',
@@ -125,8 +135,8 @@ const ballBalancingVideos: GalleryVideo[] = [
     description: 'Registro em vídeo da mesa robótica de equilíbrio de bola.',
     category: 'demonstração',
     driveFileId: '15J7sVmeQ97myM-_31V1Z1y11SRLF1ge2',
-    driveUrl: driveFileUrl('15J7sVmeQ97myM-_31V1Z1y11SRLF1ge2'),
-    embedUrl: drivePreviewUrl('15J7sVmeQ97myM-_31V1Z1y11SRLF1ge2'),
+    driveUrl: googleDriveFileUrl('15J7sVmeQ97myM-_31V1Z1y11SRLF1ge2'),
+    embedUrl: googleDrivePreviewUrl('15J7sVmeQ97myM-_31V1Z1y11SRLF1ge2'),
   },
 ];
 

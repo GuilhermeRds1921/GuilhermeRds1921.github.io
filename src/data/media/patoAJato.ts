@@ -1,6 +1,5 @@
-import { googleDriveImageUrl } from '../../lib/media';
+import { googleDriveFileUrl, googleDriveImageUrl } from '../../lib/media';
 
-const driveFileUrl = (id: string) => `https://drive.google.com/file/d/${id}/view`;
 const fallback = '/images/projects/placeholder.svg';
 
 const image = (
@@ -18,8 +17,8 @@ const image = (
   description,
   alt,
   category,
-  driveUrl: driveFileUrl(id),
-  fullUrl: driveFileUrl(id),
+  driveUrl: googleDriveFileUrl(id),
+  fullUrl: googleDriveFileUrl(id),
   thumbnailUrl: disabled ? fallback : googleDriveImageUrl(id, featured ? 1800 : 1000),
   featured,
   disabled,
@@ -40,8 +39,8 @@ const keyedImage = (
   description,
   alt,
   category,
-  driveUrl: driveFileUrl(driveFileId),
-  fullUrl: driveFileUrl(driveFileId),
+  driveUrl: googleDriveFileUrl(driveFileId),
+  fullUrl: googleDriveFileUrl(driveFileId),
   thumbnailUrl: googleDriveImageUrl(driveFileId, featured ? 1800 : 1000),
   featured,
 });

@@ -10,6 +10,19 @@ const {
   description = 'Portfolio de Guilherme Rodrigues: Engenharia de Computação, sistemas embarcados, IoT, IA aplicada, automação e Segurança da Informação.',
   lang = currentLang === 'pt' ? 'pt-BR' : 'en',
 } = Astro.props;
+
+const contentSecurityPolicy = [
+  "default-src 'self'",
+  "base-uri 'self'",
+  "object-src 'none'",
+  "form-action 'none'",
+  "img-src 'self' https://drive.google.com https://*.googleusercontent.com data:",
+  "frame-src https://drive.google.com https://www.youtube.com https://www.youtube-nocookie.com",
+  "connect-src 'self'",
+  "script-src 'self' 'unsafe-inline'",
+  "style-src 'self' 'unsafe-inline'",
+  'upgrade-insecure-requests',
+].join('; ');
 ---
 
 <html lang={lang}>
@@ -17,6 +30,8 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    <meta http-equiv="Content-Security-Policy" content={contentSecurityPolicy} />
+    <meta name="referrer" content="no-referrer" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta name="theme-color" content="#040b14" />
@@ -193,6 +208,7 @@ const {
             if (!href) return;
 
             const targetUrl = new URL(href, window.location.origin);
+            if (targetUrl.origin !== window.location.origin) return;
 
             const currentPath = window.location.pathname.replace(/\/$/, '');
             const targetPath = targetUrl.pathname.replace(/\/$/, '');

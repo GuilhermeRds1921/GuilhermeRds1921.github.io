@@ -1,5 +1,5 @@
 ---
-import { youtubeEmbedUrl } from '../lib/media';
+import { sanitizeExternalUrl, youtubeEmbedUrl } from '../lib/media';
 
 type VideoItem = {
   title: string;
@@ -12,24 +12,30 @@ const { videos = [] } = Astro.props as { videos: VideoItem[] };
 ---
 
 <div class="media-grid">
-  {videos.map((video) => (
-    <div class="media-frame">
-      {youtubeEmbedUrl(video) ? (
-        <iframe
-          title={video.title}
-          src={youtubeEmbedUrl(video)}
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        />
-      ) : video.youtubeUrl ? (
-        <a class="video-placeholder video-link-placeholder" href={video.youtubeUrl} target="_blank" rel="noreferrer">
-          Abrir no YouTube
-        </a>
-      ) : (
-        <div class="video-placeholder">▶</div>
-      )}
-      {(video.caption || video.title) && <div class="media-caption">{video.caption ?? video.title}</div>}
-    </div>
-  ))}
+  {videos.map((video) => {
+    const embedUrl = youtubeEmbedUrl(video);
+    const youtubeUrl = sanitizeExternalUrl(video.youtubeUrl);
+
+    return (
+      <div class="media-frame">
+        {embedUrl ? (
+          <iframe
+            title={video.title}
+            src={embedUrl}
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          />
+        ) : youtubeUrl ? (
+          <a class="video-placeholder video-link-placeholder" href={youtubeUrl} target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">
+            Abrir no YouTube
+          </a>
+        ) : (
+          <div class="video-placeholder">▶</div>
+        )}
+        {(video.caption || video.title) && <div class="media-caption">{video.caption ?? video.title}</div>}
+      </div>
+    );
+  })}
 </div>

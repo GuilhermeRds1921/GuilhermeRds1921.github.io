@@ -154,7 +154,7 @@ const imagesById = new Map(robotnikMedia.gallery.map((image) => [image.id, image
 
       <div class="contact-card compact-actions">
         {content.externalLinks.map((link) => (
-          <a class="btn btn-primary" href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+          <a class="btn btn-primary" href={link.href} target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">{link.label}</a>
         ))}
       </div>
     </section>
