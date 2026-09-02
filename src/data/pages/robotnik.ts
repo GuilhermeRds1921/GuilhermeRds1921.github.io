@@ -83,6 +83,10 @@ export const robotnikPageContent = {
       concepts: 'Cinemática, servomotores, estrutura mecânica, controle de movimento e prototipagem.',
       tags: ['Robótica', 'Servos', 'Prototipagem'],
       imageId: '16iLgapOKkb3Qq-9JLEzgNrLItm1W5a7w',
+      repository: {
+        label: 'Repositório no GitHub',
+        href: 'https://github.com/DAINF-PB-Robotnik/Hexapod',
+      },
     },
     {
       title: 'Cubo de LED 8x8x8',
@@ -91,6 +95,10 @@ export const robotnikPageContent = {
       concepts: 'Matrizes, multiplexação, soldagem, temporização, eletrônica digital e programação.',
       tags: ['LED', 'Eletrônica', 'Demonstração'],
       imageId: '1asPVMJk94WDILhpGAyd9upVKeJDP74V7',
+      repository: {
+        label: 'Repositório no GitHub',
+        href: 'https://github.com/DAINF-PB-Robotnik/Cube-8x8x8',
+      },
     },
     {
       title: 'Mesa de equilíbrio de bola',
@@ -100,6 +108,10 @@ export const robotnikPageContent = {
         'Controle, visão computacional, servomotores, calibração, latência, malha fechada e integração hardware-software.',
       tags: ['Oficina 1', 'Controle', 'Visão', 'Servos'],
       imageId: '1tW71B8dqGgVHH5Q0k9JiaXqu7IvTMczC',
+      repository: {
+        label: 'Repositório no GitHub',
+        href: 'https://github.com/DAINF-PB-Robotnik/Ball-Balancing-Robot',
+      },
     },
     {
       title: 'EggBot para pintura de ovos',
@@ -107,6 +119,10 @@ export const robotnikPageContent = {
         'Projeto desenvolvido na disciplina de Oficina 2: uma máquina de desenho em superfície curva, usada para demonstrar automação, coordenadas e movimento controlado.',
       concepts: 'Motores, controle de posição, desenho vetorial, automação e repetibilidade.',
       tags: ['Oficina 2', 'Automação', 'Motores', 'Desenho'],
+      repository: {
+        label: 'Repositório no GitHub',
+        href: 'https://github.com/DAINF-PB-Robotnik/Egg-Bot',
+      },
     },
     {
       title: 'Eventos',
