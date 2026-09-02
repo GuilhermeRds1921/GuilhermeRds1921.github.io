@@ -162,12 +162,12 @@ const imagesById = new Map(patoAJatoMedia.cards.map((image) => [image.id, image]
     {content.externalLinks.length > 0 && (
       <section class="project-section external-links-section">
         <div class="section-heading compact-heading">
-          <h2>Links externos</h2>
+          <h2>Instagram</h2>
         </div>
 
         <div class="contact-card compact-actions">
           {content.externalLinks.map((link) => (
-            <a class="btn btn-primary" href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
+            <a class="btn btn-primary" href={link.href} target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">{link.label}</a>
           ))}
         </div>
       </section>

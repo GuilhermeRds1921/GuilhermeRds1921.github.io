@@ -167,5 +167,10 @@ export const patoAJatoPageContent = {
     'Telemetria só é útil quando os dados são confiáveis, interpretáveis e conectados a decisões práticas da equipe.',
     'A experiência de competição ensina engenharia sob pressão: prazo, logística, falhas reais, retrabalho e colaboração entre áreas.',
   ],
-  externalLinks: [],
+  externalLinks: [
+    {
+      label: 'Instagram do Pato a Jato',
+      href: 'https://www.instagram.com/patoajato/',
+    },
+  ],
 };
