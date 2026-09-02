@@ -814,6 +814,7 @@ html[data-theme='light'] .profile-link span {
 .rich-project-card {
   padding: 0;
   overflow: hidden;
+  grid-template-rows: 180px 1fr;
 }
 
 .rich-project-card > div:last-child {
@@ -2160,6 +2161,7 @@ html[data-theme='light'] .info-list strong {
 .album-card {
   display: grid;
   overflow: hidden;
+  grid-template-rows: 180px 1fr;
   color: inherit;
   background: var(--card-bg, #fff);
   border: 1px solid var(--card-border, var(--line));
