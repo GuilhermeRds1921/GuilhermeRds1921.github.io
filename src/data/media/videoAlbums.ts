@@ -74,7 +74,7 @@ export const projectVideoAlbums: ProjectVideoAlbum[] = [
     title: 'Ball Balancing Robot',
     caption: 'Demonstrações da mesa, controle, visão computacional e interface.',
     description: 'Vídeos centralizados da mesa de equilíbrio de bola, preparados para demonstrações, testes e explicações técnicas.',
-    projectHref: '/projects/ball-balancing-robot/',
+    projectHref: '/projects/robotnik/',
     galleryHref: '/gallery/ball-balancing-robot/',
     videos: placeholderVideos(
       'ball-balancing-robot',

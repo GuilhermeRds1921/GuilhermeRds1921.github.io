@@ -189,7 +189,7 @@ export const projectAlbums: ProjectAlbum[] = [
     caption: 'Robótica, controle, visão computacional, Raspberry Pi e interface web.',
     description:
       'Álbum preparado para receber imagens da mesa robótica de equilíbrio de bola, arquitetura, testes, interface e demonstrações.',
-    projectHref: '/projects/ball-balancing-robot/',
+    projectHref: '/projects/robotnik/',
     videoHref: '/videos/ball-balancing-robot/',
     cover: ballBalancingImages[0],
     images: uniqueImages(ballBalancingImages),
