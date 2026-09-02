@@ -146,7 +146,7 @@ const robotnikAlbumImages: GalleryImage[] = [
 ];
 
 const geastroImages: GalleryImage[] = [
-  normalizeImage({ ...projectImage('geastroCover'), title: 'GeAstro' }),
+  normalizeImage({ ...projectImage('geastroCover'), title: 'GEAstro' }),
 ];
 
 export const projectAlbums: ProjectAlbum[] = [
@@ -189,10 +189,10 @@ export const projectAlbums: ProjectAlbum[] = [
   },
   {
     slug: 'geastro',
-    title: 'GeAstro',
+    title: 'GEAstro',
     caption: 'Astronomia, eventos, observações e divulgação científica.',
     description:
-      'Álbum centralizado para registros do GeAstro, eventos, atividades de divulgação científica e ações com a comunidade.',
+      'Álbum centralizado para registros do GEAstro, eventos, atividades de divulgação científica e ações com a comunidade.',
     projectHref: '/projects/geastro/',
     videoHref: '/videos/geastro/',
     cover: geastroImages[0],

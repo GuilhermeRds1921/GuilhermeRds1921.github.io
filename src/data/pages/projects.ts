@@ -45,7 +45,7 @@ export const projectListContent = {
         image: projectImage('robotnikCover'),
       },
       {
-        title: 'GeAstro',
+        title: 'GEAstro',
         href: '/projects/geastro/',
         text: 'Astronomia, observações e divulgação científica para aproximar tecnologia, ciência e comunidade.',
         tags: ['Astronomia', 'Extensão', 'Ciência'],
@@ -97,7 +97,7 @@ export const projectListContent = {
         image: projectImage('robotnikCover'),
       },
       {
-        title: 'GeAstro',
+        title: 'GEAstro',
         href: '/en/projects/geastro/',
         text: 'Astronomy, observations and scientific outreach to connect technology, science and the community.',
         tags: ['Astronomy', 'Outreach', 'Science'],

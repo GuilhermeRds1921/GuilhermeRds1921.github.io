@@ -57,14 +57,14 @@ export const projectVideoAlbums: ProjectVideoAlbum[] = [
   },
   {
     slug: 'geastro',
-    title: 'GeAstro',
+    title: 'GEAstro',
     caption: 'Eventos, observações e divulgação científica.',
-    description: 'Vídeos centralizados do GeAstro, com espaço para registros de observações, eventos e ações de divulgação científica.',
+    description: 'Vídeos centralizados do GEAstro, com espaço para registros de observações, eventos e ações de divulgação científica.',
     projectHref: '/projects/geastro/',
     galleryHref: '/gallery/geastro/',
     videos: placeholderVideos(
       'geastro',
-      'Vídeos do GeAstro',
+      'Vídeos do GEAstro',
       'Seção pronta para receber registros de astronomia, observações e divulgação científica via YouTube.',
     ),
     tags: ['Astronomia', 'Eventos', 'Ciência'],
