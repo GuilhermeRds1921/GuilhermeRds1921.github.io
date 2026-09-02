@@ -35,13 +35,6 @@ export const robotnikPageContent = {
     title: 'SEI-SICITE 2023',
     description:
       'No SEI-SICITE 2023, participei como bolsista no trabalho “Robotnik: Divulgação robótica e científica para comunidade”, ligado ao ciclo 2022-2023 do projeto. Na época, eu estava entre o 4º e o 5º período da faculdade. O texto apresenta a Robotnik como uma iniciativa para aproximar universidade, escolas e comunidade por meio de protótipos de robótica com forte apelo visual e didático.',
-    highlights: [
-      'O trabalho teve como foco a divulgação tecnológica dos cursos de Engenharia de Computação e Análise e Desenvolvimento de Sistemas da UTFPR-PB.',
-      'Foram apresentados dois protótipos funcionais: o robô Hexapod e o Cubo de LED 8x8x8.',
-      'O Hexapod explorou eletrônica, programação embarcada, servomotores, comunicação Bluetooth, controle por gamepad, modelagem e impressão 3D.',
-      'O Cubo de LED 8x8x8 reuniu 512 LEDs controlados por Arduino para gerar padrões de iluminação e efeitos visuais em demonstrações.',
-      'Os protótipos foram utilizados em ações como a Feira de Profissões e o Dia da Tecnologia, ajudando a apresentar a área de computação para estudantes e visitantes.',
-    ],
   },
   timeline: [
     {
