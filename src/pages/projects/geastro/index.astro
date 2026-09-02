@@ -1,53 +1,330 @@
 ---
 import PortfolioLayout from '../../../layouts/PortfolioLayout.astro';
+import { projectImage } from '../../../lib/media';
+
+const heroImage = projectImage('geastroCover');
+
+const timeline = [
+  {
+    period: '1995',
+    title: 'Origem do grupo de Astronomia',
+    description:
+      'Professores de Física do antigo CEFET-PB, atual UTFPR-PB, iniciaram um grupo dedicado ao estudo da Astronomia.',
+  },
+  {
+    period: '2010',
+    title: 'Fundação do GEAstro',
+    description:
+      'O grupo passou a atuar como Grupo de Estudos, Pesquisa, Extensão e Inovação em Astronomia, mantendo atividades acadêmicas e de extensão.',
+  },
+  {
+    period: 'Extensão',
+    title: 'Astronomia para a comunidade',
+    description:
+      'As ações aproximam escolas, professores, estudantes, famílias e visitantes da universidade por meio de observações, oficinas e eventos.',
+  },
+  {
+    period: 'Vivência',
+    title: 'Participação no projeto',
+    description:
+      'A experiência envolve comunicação científica, apoio em atividades abertas ao público e contato direto com ensino, organização e divulgação.',
+  },
+];
+
+const highlights = [
+  {
+    value: 'UTFPR-PB',
+    label: 'Grupo sediado no Campus Pato Branco da Universidade Tecnológica Federal do Paraná.',
+  },
+  {
+    value: '2010',
+    label: 'Ano de fundação do GEAstro como grupo de estudos, pesquisa, extensão e inovação.',
+  },
+  {
+    value: '9',
+    label: 'Projetos em desenvolvimento citados pela página institucional Quem somos.',
+  },
+  {
+    value: 'Comunidade',
+    label: 'Atuação aberta a públicos internos e externos à UTFPR.',
+  },
+];
+
+const activities = [
+  {
+    title: 'Observações astronômicas',
+    description:
+      'Atividades de observação do céu voltadas ao contato direto do público com fenômenos astronômicos e instrumentos de observação.',
+    concepts: 'Mediação científica, céu noturno, telescópios, leitura do céu e orientação do público.',
+    tags: ['Observação', 'Astronomia', 'Público'],
+  },
+  {
+    title: 'Astronomia para Todos',
+    description:
+      'Frente de extensão que aproxima a UTFPR-PB de escolas, instituições de ensino e comunidade regional por meio da Astronomia.',
+    concepts: 'Extensão universitária, educação científica, escolas e integração com a comunidade.',
+    tags: ['Extensão', 'Escolas', 'Ciência'],
+  },
+  {
+    title: 'Oficinas e formação',
+    description:
+      'Ações formativas com propostas didáticas e materiais acessíveis para apoiar o ensino de Astronomia e Astronáutica.',
+    concepts: 'Oficinas, ensino, materiais de baixo custo, planejamento e comunicação.',
+    tags: ['Ensino', 'Oficinas', 'Didática'],
+  },
+  {
+    title: 'Foguetes didáticos',
+    description:
+      'Atividades envolvendo lançamentos e mostras de foguetes como forma prática de explorar conceitos de Física e Astronáutica.',
+    concepts: 'Astronáutica, experimentação, segurança, montagem e demonstrações práticas.',
+    tags: ['Foguetes', 'Física', 'Prática'],
+  },
+  {
+    title: 'OBA e AstroKids',
+    description:
+      'Ações de preparação, divulgação e atividades lúdicas que ajudam estudantes a se aproximarem da Astronomia desde a educação básica.',
+    concepts: 'Olimpíada Brasileira de Astronomia, aprendizagem ativa, curiosidade e formação científica.',
+    tags: ['OBA', 'AstroKids', 'Estudantes'],
+  },
+  {
+    title: 'Eventos científicos',
+    description:
+      'Participação em eventos como AstroPB, Mostra de Foguetes, feiras, semanas acadêmicas, palestras e minicursos.',
+    concepts: 'Organização, divulgação, atendimento ao público, programação e colaboração em equipe.',
+    tags: ['AstroPB', 'Eventos', 'Equipe'],
+  },
+];
+
+const technologies = [
+  'Astronomia',
+  'Astronáutica',
+  'Ciências Espaciais',
+  'Extensão universitária',
+  'Divulgação científica',
+  'Comunicação',
+  'Ensino',
+  'Oficinas',
+  'Observação do céu',
+  'Eventos',
+  'OBA',
+  'Foguetes didáticos',
+  'Mediação com público',
+  'Organização de atividades',
+];
+
+const learnings = [
+  'Divulgação científica exige transformar conteúdo técnico em experiências claras, acessíveis e interessantes para diferentes públicos.',
+  'Projetos de extensão dependem de organização, comunicação, acolhimento e adaptação ao perfil de cada atividade.',
+  'Astronomia funciona como uma porta de entrada forte para ciência, tecnologia, curiosidade e pensamento crítico.',
+  'Atividades com escolas e comunidade ensinam a equilibrar rigor científico, linguagem simples e cuidado com o público.',
+  'O trabalho em grupo amplia a visão sobre universidade, ensino, pesquisa e impacto social da tecnologia.',
+];
+
+const externalLinks = [
+  {
+    label: 'Site oficial do GEAstro',
+    href: 'https://www.pb.utfpr.edu.br/geastro/',
+  },
+  {
+    label: 'Quem somos',
+    href: 'https://www.pb.utfpr.edu.br/geastro/?page_id=10266',
+  },
+  {
+    label: 'Instagram do GEAstro',
+    href: 'https://www.instagram.com/geastro/',
+  },
+];
 ---
-<PortfolioLayout title="GeAstro | Guilherme Rodrigues">
-  <section class="project-detail-hero project-hero-control">
+
+<PortfolioLayout
+  title="GEAstro | Guilherme Rodrigues"
+  description="Página detalhada do projeto GEAstro, com extensão universitária, Astronomia, divulgação científica, ensino, eventos e comunicação com a comunidade."
+>
+  <section
+    class="project-detail-hero project-hero-image"
+    style={`--project-hero-image: url('${heroImage.src}')`}
+  >
     <div>
       <p class="eyebrow">Astronomia · Extensão · Divulgação científica</p>
-      <h1>GeAstro</h1>
+      <h1>GEAstro</h1>
       <p>
-        Projeto voltado à astronomia e à popularização da ciência, com atividades de observação,
-        eventos e ações para aproximar a comunidade do conhecimento científico.
+        Vivência em extensão universitária no Grupo de Estudos, Pesquisa,
+        Extensão e Inovação em Astronomia da UTFPR-PB, conectando ciência,
+        ensino, eventos e comunicação com a comunidade.
       </p>
-      <div class="tag-row"><span>Astronomia</span><span>Extensão</span><span>Ciência</span><span>Comunidade</span></div>
+      <div class="tag-row">
+        <span>Extensão</span>
+        <span>Astronomia</span>
+        <span>Ensino</span>
+        <span>Comunicação científica</span>
+        <span>UTFPR-PB</span>
+      </div>
     </div>
   </section>
 
-  <article class="content-section project-layout-grid">
-    <aside class="project-aside">
-      <strong>Tipo</strong><span>Extensão / Divulgação científica</span>
-      <strong>Área</strong><span>Astronomia e ciência aplicada</span>
-      <strong>Status</strong><span>Projeto acadêmico</span>
-    </aside>
-    <div class="project-body longform">
-      <h2>Visão geral</h2>
-      <p>
-        O GeAstro reúne atividades ligadas à astronomia, observações e divulgação científica,
-        conectando universidade, tecnologia e comunidade em experiências práticas de aprendizagem.
-      </p>
+  <article class="content-section robotnik-page geastro-page">
+    <section class="project-intro-grid">
+      <div class="project-body longform">
+        <p class="lead">
+          O GEAstro representa uma experiência acadêmica de extensão em que a
+          Astronomia aproxima universidade, escolas e comunidade. A participação
+          no grupo envolve aprender ciência também pelo lado da comunicação:
+          explicar, organizar, receber o público e transformar temas complexos
+          em atividades acessíveis.
+        </p>
 
-      <h2>Fotos e vídeos</h2>
-      <p>
-        As fotos e vídeos do GeAstro ficam concentrados nas áreas gerais de mídia do portfólio.
-      </p>
-      <div class="contact-card compact-actions">
-        <a class="btn btn-primary" href="/gallery/geastro/">Ver fotos do GeAstro</a>
-        <a class="btn" href="/videos/geastro/">Ver vídeos do GeAstro</a>
+        <h2>Contexto do GEAstro</h2>
+        <p>
+          Segundo a página institucional do grupo, a história começou em 1995,
+          quando professores de Física do CEFET-PB, atual UTFPR-PB, iniciaram
+          um grupo para estudar Astronomia. Em 2010, a Profª. Dra. Tina
+          Andreolla fundou o GEAstro, que segue ativo como grupo de estudos,
+          pesquisa, extensão e inovação em Astronomia.
+        </p>
+        <p>
+          O grupo é sediado na UTFPR - Campus Pato Branco, é aberto a públicos
+          internos e externos à universidade e desenvolve ações ligadas à
+          Astronomia, Astronáutica, Ciências Espaciais, ensino e popularização
+          da ciência.
+        </p>
+
+        <h2>Minha participação</h2>
+        <p>
+          Minha participação no GEAstro se conecta principalmente à vivência em
+          extensão e divulgação científica. É uma frente menos centrada em um
+          produto técnico único e mais voltada à construção de experiências:
+          atividades com público, eventos, comunicação, organização e mediação
+          de temas científicos.
+        </p>
+        <p>
+          Dentro do portfólio, o GEAstro mostra outra parte da minha formação:
+          a capacidade de sair do laboratório e conversar com pessoas de
+          diferentes idades e contextos, traduzindo conhecimento científico em
+          algo observável, prático e compartilhável.
+        </p>
       </div>
 
-      <h2>Instagram</h2>
-      <div class="contact-card compact-actions">
-        <a
-          class="btn btn-primary"
-          href="https://www.instagram.com/geastro/"
-          target="_blank"
-          rel="noopener noreferrer"
-          referrerpolicy="no-referrer"
-        >
-          Instagram do GeAstro
-        </a>
+      <aside class="project-aside geastro-aside">
+        <strong>Projeto</strong><span>GEAstro</span>
+        <strong>Instituição</strong><span>UTFPR - Campus Pato Branco</span>
+        <strong>Tipo</strong><span>Extensão universitária</span>
+        <strong>Área</strong><span>Astronomia, ensino e divulgação científica</span>
+        <strong>Participação</strong><span>Comunicação científica, eventos e atividades com a comunidade</span>
+      </aside>
+    </section>
+
+    <section class="project-section">
+      <div class="section-heading compact-heading">
+        <h2>Linha do tempo</h2>
       </div>
-    </div>
+
+      <div class="project-timeline">
+        {timeline.map((item) => (
+          <article>
+            <span>{item.period}</span>
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-heading compact-heading">
+        <h2>Presença e alcance</h2>
+        <p>
+          Alguns pontos institucionais ajudam a situar o GEAstro dentro da
+          UTFPR-PB e da comunidade regional.
+        </p>
+      </div>
+
+      <div class="project-highlight-grid">
+        {highlights.map((highlight) => (
+          <article>
+            <span>{highlight.value}</span>
+            <p>{highlight.label}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-heading compact-heading">
+        <h2>Frentes de atuação</h2>
+        <p>
+          O grupo combina estudo, extensão, eventos e atividades práticas para
+          aproximar Astronomia e ciência do cotidiano das pessoas.
+        </p>
+      </div>
+
+      <div class="prototype-grid">
+        {activities.map((activity) => (
+          <article class="prototype-card">
+            <div>
+              <h3>{activity.title}</h3>
+              <p>{activity.description}</p>
+              <small>{activity.concepts}</small>
+              <div class="tag-row">
+                {activity.tags.map((tag) => <span>{tag}</span>)}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="project-section media-hub-callout">
+      <div class="section-heading compact-heading">
+        <h2>Fotos e vídeos</h2>
+        <p>
+          Para manter a página do projeto mais leve, as fotos e vídeos ficam
+          concentrados nas áreas gerais de mídia do portfólio.
+        </p>
+      </div>
+
+      <div class="contact-card compact-actions">
+        <a class="btn btn-primary" href="/gallery/geastro/">Ver fotos do GEAstro</a>
+        <a class="btn" href="/videos/geastro/">Ver vídeos do GEAstro</a>
+      </div>
+    </section>
+
+    <section class="project-section project-two-columns">
+      <div>
+        <div class="section-heading compact-heading">
+          <h2>Tecnologias e conceitos</h2>
+        </div>
+
+        <div class="skills-cloud compact-skills">
+          {technologies.map((technology) => <span>{technology}</span>)}
+        </div>
+      </div>
+
+      <div class="project-body longform">
+        <h2>Aprendizados</h2>
+        <ul>
+          {learnings.map((learning) => <li>{learning}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-section external-links-section">
+      <div class="section-heading compact-heading">
+        <h2>Links externos</h2>
+      </div>
+
+      <div class="contact-card compact-actions">
+        {externalLinks.map((link, index) => (
+          <a
+            class={index === 0 ? 'btn btn-primary' : 'btn'}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            referrerpolicy="no-referrer"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </section>
   </article>
 </PortfolioLayout>
