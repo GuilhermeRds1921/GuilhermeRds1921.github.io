@@ -66,13 +66,22 @@ import { biometriaNeonatalPageContent as content } from '../../../data/pages/bio
 
     <section class="project-section external-links-section">
       <div class="section-heading compact-heading">
-        <h2>Instagram</h2>
+        <h2>Links acadêmicos</h2>
       </div>
 
       <div class="contact-card compact-actions">
         {content.externalLinks.map((link) => (
           <a class="btn btn-primary" href={link.href} target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">{link.label}</a>
         ))}
+        <a
+          class="btn"
+          href="https://www.researchgate.net/profile/Guilherme-Rodrigues-65"
+          target="_blank"
+          rel="noopener noreferrer"
+          referrerpolicy="no-referrer"
+        >
+          ResearchGate
+        </a>
       </div>
     </section>
   </article>
