@@ -1871,6 +1871,16 @@ main,
   color: var(--text-muted);
 }
 
+html[data-theme='dark'] .project-body.longform,
+html[data-theme='dark'] .project-body.longform p,
+html[data-theme='dark'] .project-body.longform li {
+  color: #d6e2ee;
+}
+
+html[data-theme='dark'] .project-body.longform .lead {
+  color: #f1f7fb;
+}
+
 /* ================================
    HERO
 ================================ */
