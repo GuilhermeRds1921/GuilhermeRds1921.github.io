@@ -107,6 +107,17 @@ const imagesById = new Map(robotnikMedia.gallery.map((image) => [image.id, image
                 <div class="tag-row">
                   {prototype.tags.map((tag) => <span>{tag}</span>)}
                 </div>
+                {prototype.repository && (
+                  <a
+                    class="inline-link prototype-repo-link"
+                    href={prototype.repository.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    referrerpolicy="no-referrer"
+                  >
+                    {prototype.repository.label}
+                  </a>
+                )}
               </div>
             </article>
           );
