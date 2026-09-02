@@ -140,6 +140,11 @@ const ballBalancingVideos: GalleryVideo[] = [
   },
 ];
 
+const robotnikAlbumImages: GalleryImage[] = [
+  ...robotnikImages,
+  ...ballBalancingImages,
+];
+
 const geastroImages: GalleryImage[] = [
   normalizeImage({ ...projectImage('geastroCover'), title: 'GeAstro' }),
 ];
@@ -148,14 +153,15 @@ export const projectAlbums: ProjectAlbum[] = [
   {
     slug: 'robotnik',
     title: 'Robotnik',
-    caption: 'Robôs, cubo de LED, hexapod, mesa de equilíbrio e divulgação científica.',
+    caption: 'Robótica, controle, visão computacional, Raspberry Pi, protótipos e divulgação científica.',
     description:
-      'Álbum centralizado com registros do projeto Robotnik, protótipos de robótica, eletrônica aplicada e ações de divulgação tecnológica.',
+      'Álbum centralizado com registros do projeto Robotnik, protótipos de robótica, eletrônica aplicada, mesa de equilíbrio de bola e ações de divulgação tecnológica.',
     projectHref: '/projects/robotnik/',
     videoHref: '/videos/robotnik/',
     cover: normalizeImage(robotnikMedia.cover),
-    images: uniqueImages(robotnikImages),
-    tags: ['Robótica', 'Extensão', 'Protótipos'],
+    images: uniqueImages(robotnikAlbumImages),
+    videos: ballBalancingVideos,
+    tags: ['Robótica', 'Controle', 'OpenCV', 'Raspberry Pi', 'Extensão'],
   },
   {
     slug: 'pato-a-jato',
@@ -192,19 +198,6 @@ export const projectAlbums: ProjectAlbum[] = [
     cover: geastroImages[0],
     images: uniqueImages(geastroImages),
     tags: ['Astronomia', 'Extensão', 'Ciência'],
-  },
-  {
-    slug: 'ball-balancing-robot',
-    title: 'Ball Balancing Robot',
-    caption: 'Robótica, controle, visão computacional, Raspberry Pi e interface web.',
-    description:
-      'Álbum preparado para receber imagens da mesa robótica de equilíbrio de bola, arquitetura, testes, interface e demonstrações.',
-    projectHref: '/projects/robotnik/',
-    videoHref: '/videos/ball-balancing-robot/',
-    cover: ballBalancingImages[0],
-    images: uniqueImages(ballBalancingImages),
-    videos: ballBalancingVideos,
-    tags: ['Controle', 'OpenCV', 'Raspberry Pi'],
   },
 ];
 
