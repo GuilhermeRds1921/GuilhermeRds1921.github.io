@@ -2,7 +2,7 @@
 
 Portfólio pessoal de **Guilherme Rodrigues**, estudante de **Engenharia de Computação na UTFPR – Campus Pato Branco**, com foco em projetos de tecnologia aplicada, sistemas embarcados, IoT, inteligência artificial, visão computacional, automação, telemetria, eletrônica e Segurança da Informação.
 
-O site funciona como um **hub público** para organizar minha trajetória acadêmica, projetos, histórias, documentação técnica, galerias, vídeos, certificações e materiais relacionados ao meu desenvolvimento profissional.
+O site funciona como um **hub público** para organizar minha trajetória acadêmica, projetos, histórias, documentação técnica, galerias, vídeos e materiais relacionados ao meu desenvolvimento profissional.
 
 <p>
   <a href="https://guilhermerds1921.github.io/">

@@ -877,7 +877,6 @@ html[data-theme='light'] .profile-link span {
 
 .structure-grid,
 .story-grid,
-.cert-grid,
 .contact-grid,
 .video-grid {
   display: grid;
@@ -890,7 +889,6 @@ html[data-theme='light'] .profile-link span {
 
 .structure-card,
 .story-card,
-.cert-card,
 .contact-tile {
   display: grid;
   gap: 0.55rem;
@@ -912,14 +910,12 @@ html[data-theme='light'] .profile-link span {
 
 .structure-card strong,
 .story-card h2,
-.cert-card h2,
 .contact-tile strong {
   color: var(--heading);
 }
 
 .structure-card span,
 .story-card p,
-.cert-card p,
 .contact-tile span {
   color: var(--muted);
   line-height: 1.6;
@@ -1467,21 +1463,6 @@ html[data-theme='dark'] .empty-media-note {
   margin: 0;
 }
 
-.cert-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.cert-card span {
-  width: 2.4rem;
-  height: 2.4rem;
-  display: grid;
-  place-items: center;
-  border-radius: 999px;
-  background: #e7f3ff;
-  color: var(--accent-dark);
-  font-weight: 900;
-}
-
 .contact-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -1500,7 +1481,6 @@ html[data-theme='dark'] .empty-media-note {
   .project-highlight-grid,
   .prototype-grid,
   .project-two-columns,
-  .cert-grid,
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -1917,7 +1897,6 @@ html[data-theme='dark'] .project-body.longform .lead {
 .structure-card,
 .timeline-item,
 .contact-card,
-.cert-card,
 .sicite-section,
 .project-highlight-section,
 .sicite-highlight-grid article,
@@ -1936,7 +1915,6 @@ html[data-theme='dark'] .project-body.longform .lead {
 .project-card h3,
 .fact-card strong,
 .structure-card strong,
-.cert-card h2,
 .project-timeline h3,
 .prototype-card h3,
 .project-highlight-grid span,
@@ -1948,7 +1926,6 @@ html[data-theme='dark'] .project-body.longform .lead {
 
 .project-card p,
 .structure-card span,
-.cert-card p,
 .sicite-highlight-grid p,
 .project-highlight-grid p,
 .project-timeline p,

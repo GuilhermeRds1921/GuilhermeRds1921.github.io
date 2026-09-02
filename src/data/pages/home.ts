@@ -42,7 +42,7 @@ export const homeContent = {
       items: [
         ['Projetos', 'Páginas técnicas com objetivos, arquitetura, mídias, resultados e aprendizados.', '/projects/'],
         ['Galeria', 'Coleções de fotos de protótipos, eventos, laboratórios, oficinas e experimentos.', '/gallery/'],
-        ['Certificações', 'Cursos, certificados, materiais da Cisco e formações complementares.', '/certifications/'],
+        ['Laboratório', 'Experimentos, protótipos, testes e estudos em desenvolvimento.', '/laboratorio/'],
       ],
     },
     skills: {
@@ -134,7 +134,7 @@ export const homeContent = {
       items: [
         ['Projects', 'Technical pages with goals, architecture, media, results and lessons learned.', '/en/projects/'],
         ['Gallery', 'Photo collections from prototypes, events, labs, workshops and experiments.', '/en/gallery/'],
-        ['Certifications', 'Courses, certificates, Cisco material and complementary learning.', '/en/certifications/'],
+        ['Laboratory', 'Experiments, prototypes, tests and studies in progress.', '/en/laboratory/'],
       ],
     },
     skills: {
